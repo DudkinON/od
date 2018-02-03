@@ -14,3 +14,75 @@ img {
     max-width: 100%;
 }
 
+/* TODO: Main styles */
+.invisible {
+    opacity: 0;
+}
+
+.visible {
+    animation-duration: 1.5s;
+    opacity: 1;
+}
+
+.appear-animated {
+    visibility: hidden;
+}
+
+.appear-animated {
+    animation-name: apear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    visibility: visible !important;
+}
+
+@keyframes apear {
+    0% {
+        opacity: 0
+    }
+    10% {
+        opacity: .1
+    }
+    20% {
+        opacity: .2
+    }
+    30% {
+        opacity: .3
+    }
+    40% {
+        opacity: .4
+    }
+    50% {
+        opacity: .5
+    }
+    60% {
+        opacity: .6
+    }
+    70% {
+        opacity: .7
+    }
+    80% {
+        opacity: .8
+    }
+    90% {
+        opacity: .9
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.title {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.icon {
+    font-size: 120px;
+    color: #ccc;
+}
+
+.white-icon {
+    font-size: 120px;
+    color: #fff;
+}
+
