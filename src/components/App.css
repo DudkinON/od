@@ -1,0 +1,16 @@
+/* Created by Oleg Dudkin on 7/13/2017. */
+/* TODO: The basic styles */
+body {
+    color: #ccc;
+    background: white;
+}
+
+a {
+    min-width: 40px;
+    min-height: 40px;
+}
+
+img {
+    max-width: 100%;
+}
+
