@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Provider from './Provider';
+import Header from './Header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
@@ -18,6 +19,7 @@ class App extends Component {
 
     return (
       <div>
+        <Header main={data.header} controller={controller} scene={ScrollMagic.Scene}/>
 
       </div>
     );
