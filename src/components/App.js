@@ -5,6 +5,7 @@ import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
+import Certificates from './Certificates';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
 import './App.css';
@@ -27,6 +28,7 @@ class App extends Component {
         <Skills main={data.skills} controller={controller} scene={ScrollMagic.Scene}/>
         <Experience main={data.experience} controller={controller} scene={ScrollMagic.Scene}/>
         <Education main={data.education} controller={controller} scene={ScrollMagic.Scene}/>
+        <Certificates url={data.certificates} controller={controller} scene={ScrollMagic.Scene}/>
       </div>
     );
   }
