@@ -14,6 +14,29 @@ img {
     max-width: 100%;
 }
 
+#skills {
+    position: relative;
+    transition: all 1s ease;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.block-offset {
+    padding: 0 25px 25px;
+}
+
+.skill-title {
+    margin: 5px 0 0;
+}
+
+/* TODO: progress animation */
+
+.progress-bar-fix {
+    background-color: #686868;
+}
+
 /* TODO: Main styles */
 .invisible {
     opacity: 0;
@@ -112,12 +135,36 @@ img {
     text-align: center;
 }
 
-.card-container {
-    margin: 5px 0;
+.card-item {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.card-item .card-container {
+    min-width: 280px;
+    min-height: 100%;
+
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    color: #fff;
     padding: 10px;
-    max-width: 280px;
-    min-height: 200px;
-    text-align: center;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.card-item h6 {
+    font-size: 18px;
+}
+
+.card-item span {
+    font-size: 12px;
 }
 
 .title-card {
@@ -142,10 +189,6 @@ img {
 
 .link-card > a:hover {
     background: #49b1ea;
-}
-
-.toggle-card {
-
 }
 
 /* TODO: The about page styles */
@@ -227,7 +270,8 @@ img {
     text-align: center;
     text-transform: uppercase;
     font-size: 24px;
-    padding: 10px 0;
+    padding: 0;
+    width: 100%;
 }
 
 /* TODO: Section experience */
@@ -302,11 +346,6 @@ img {
     padding-top: 10px;
 }
 
-.card-item {
-    display: inline-block;
-    margin: 10px;
-}
-
 /* TODO: Works section */
 .works {
     background-image: linear-gradient(rgb(8, 208, 210) 38%, rgb(184, 253, 253) 100%);
@@ -345,50 +384,19 @@ img {
     display: none;
 }
 
-#skype-button {
-    z-index: 1;
-}
-
-.skype-button {
-    opacity: 0 !important;
-}
-
-.skype > div > p > a {
-    position: relative;
-    left: -10px;
-}
-
-.skype-box {
-    display: inline-block;
-}
-
-.skype-box > a {
+.social-link {
     text-decoration: none;
     font-size: 40px;
     padding: 10px;
     color: #ccc;
+    cursor: pointer;
+    display: inline;
 }
 
-.skype-box:hover > a {
+.social-link:hover {
     color: #666;
 }
 
-#SkypeButton_Call_sumonix_1_paraElement > a > img {
-    margin: 0 !important;
-    padding: 20px 10px;
-}
-
-.skype {
-    opacity: 0;
-    cursor: pointer;
-    position: relative;
-    top: 60px;
-    left: 5px;
-    width: 60px;
-    height: 60px;
-    padding: 5px;
-    z-index: 10;
-}
 
 /* TODO: The footer block */
 .footer {
@@ -471,9 +479,6 @@ img {
         text-align: center;
     }
 
-    #SkypeButton_Call_sumonix_1_paraElement > a > img {
-        padding: 10px 0;
-    }
 }
 
 @media screen and (max-width: 474px) {
@@ -559,10 +564,11 @@ polygon {
     fill: #09c3c5;
     transition: all .3s ease-out;
 }
+
 polygon.arrow-middle {
-         opacity: 0.75;
-     }
+    opacity: 0.75;
+}
 
 polygon.arrow-top {
-     opacity: 0.5
+    opacity: 0.5
 }
