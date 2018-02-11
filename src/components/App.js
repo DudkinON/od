@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Provider from './Provider';
 import Header from './Header';
 import About from './About';
+import Skills from './Skills';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
 import './App.css';
@@ -21,7 +22,7 @@ class App extends Component {
       <div>
         <Header main={data.header} controller={controller} scene={ScrollMagic.Scene}/>
         <About main={data.about} controller={controller} scene={ScrollMagic.Scene}/>
-
+        <Skills main={data.skills} controller={controller} scene={ScrollMagic.Scene}/>
       </div>
     );
   }
