@@ -35,7 +35,7 @@ class WorkElement extends React.Component {
     }
 
     return (
-      <div className="col-sm-12 col-md-6 work-item">
+      <div className="col-sm-12 col-md-6 text-center">
         <div className="card-item" style={{backgroundImage: item.img}} onClick={showWork}
              onMouseEnter={this.toggle.bind(this)} onMouseLeave={this.toggle.bind(this)}>
           <img src={item.img} alt={item.title} />
