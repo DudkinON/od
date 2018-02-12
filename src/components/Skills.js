@@ -27,13 +27,13 @@ class Skills extends Component {
         f();
       });
       scene.destroy();
-      scene = null;
+      scene = null
     }
 
 
     let scene = new this.props.scene({
-      offset: 400,		// start this scene
-      duration: 500	// end this scene
+      offset: 400,    // start this scene
+      duration: 500   // end this scene
     }).setPin("#skills")
       .on("end", skillsCallback)
       .addTo(this.props.controller);
