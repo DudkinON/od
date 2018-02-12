@@ -20,20 +20,20 @@ class App extends Component {
   render() {
 
     let scope = this;
-    let controller = new ScrollMagic.Controller();
-    const data = Provider;
+    scope.controller = new ScrollMagic.Controller();
+    scope.data = Provider;
 
 
     return (
       <div>
-        <Header main={data.header} controller={controller} scene={ScrollMagic.Scene}/>
-        <About main={data.about} controller={controller} scene={ScrollMagic.Scene}/>
-        <Skills main={data.skills} controller={controller} scene={ScrollMagic.Scene}/>
-        <Experience main={data.experience} controller={controller} scene={ScrollMagic.Scene}/>
-        <Education main={data.education} controller={controller} scene={ScrollMagic.Scene}/>
-        <Certificates url={data.certificates} controller={controller} scene={ScrollMagic.Scene}/>
-        <Works url={data.works} controller={controller} scene={ScrollMagic.Scene}/>
-        <Contacts social={data.social} controller={controller} scene={ScrollMagic.Scene}/>
+        <Header main={scope.data.header} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <About main={scope.data.about} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Skills main={scope.data.skills} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Experience main={scope.data.experience} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Education main={scope.data.education} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Certificates url={scope.data.certificates} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Works url={scope.data.works} controller={scope.controller} scene={ScrollMagic.Scene}/>
+        <Contacts social={scope.data.social} controller={scope.controller} scene={ScrollMagic.Scene}/>
         <Footer/>
       </div>
     );
