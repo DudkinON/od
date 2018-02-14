@@ -13,30 +13,24 @@ class Skills extends Component {
 
   render() {
 
-    let scope = this;
+    let self = this;
 
     const data = this.props.main;
 
     function asyncCallback(func) {
-      scope.state.functions.push(func);
+      self.state.functions.push(func);
     }
 
     function skillsCallback() {
       $('#skills').css("left", "0");
-      scope.state.functions.forEach(function (f) {
+      self.state.functions.forEach(function (f) {
         f();
       });
-      scene.destroy();
-      scene = null
     }
+    $(document).ready(function(){
+      $('#skills').viewportChecker({callbackFunction: skillsCallback});
+    });
 
-
-    let scene = new this.props.scene({
-      offset: 400,    // start this scene
-      duration: 500   // end this scene
-    }).setPin("#skills")
-      .on("end", skillsCallback)
-      .addTo(this.props.controller);
 
     return (
       <section className="skills" id="skills" style={{left: "-100%"}}>

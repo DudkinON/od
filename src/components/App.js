@@ -12,29 +12,27 @@ import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
 import './App.css';
-import * as ScrollMagic from "scrollmagic";
-
+import * as viewportChecker from './jq.vp'
 class App extends Component {
-
 
   render() {
 
     let scope = this;
-    scope.controller = new ScrollMagic.Controller();
     scope.data = Provider;
+    scope.viewportChecker = viewportChecker;
 
 
     return (
       <div>
-        <Header main={scope.data.header} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <About main={scope.data.about} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Skills main={scope.data.skills} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Experience main={scope.data.experience} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Education main={scope.data.education} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Certificates url={scope.data.certificates} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Works url={scope.data.works} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Contacts social={scope.data.social} controller={scope.controller} scene={ScrollMagic.Scene}/>
-        <Footer/>
+        <Header main={scope.data.header} scope={scope}/>
+        <About main={scope.data.about} scope={scope}/>
+        <Skills main={scope.data.skills} scope={scope}/>
+        <Experience main={scope.data.experience} scope={scope}/>
+        <Education main={scope.data.education} scope={scope}/>
+        <Certificates url={scope.data.certificates} scope={scope}/>
+        <Works url={scope.data.works} scope={scope}/>
+        <Contacts social={scope.data.social} scope={scope}/>
+        <Footer scope={scope}/>
       </div>
     );
   }
