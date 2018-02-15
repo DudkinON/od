@@ -18,6 +18,11 @@ class Skills extends Component {
     const data = this.props.main;
 
     function asyncCallback(func) {
+      /**
+       * Get function and add to array
+       * @param func: (function)
+       * @return void:
+       */
       self.state.functions.push(func);
     }
 
