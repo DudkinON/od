@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import WorkElement from "./WorkElement";
+import $ from "jquery";
 
 
 class Works extends Component {
@@ -38,6 +39,12 @@ class Works extends Component {
 
     const {error, isLoaded, items} = this.state;
 
+    $(document).ready(function(){
+      $('#works').viewportChecker({
+        classToRemove: 'invisible',
+        classToAdd: 'visible fadeInLeft',
+        offset: 300});
+    });
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -45,7 +52,7 @@ class Works extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <section className="skills">
+        <section className="works animated invisible" id="works">
           <div className="container">
             <div className="row">
               <div className="col-lg-2">
@@ -54,7 +61,7 @@ class Works extends Component {
               </div>
               <div className="col-lg-10 row">
                 {items.map( (item, i) =>
-                  <WorkElement item={item} key={"work_" + i}/>
+                  <WorkElement item={item} key={"work_" + i} i={i}/>
                 )}
               </div>
             </div>
