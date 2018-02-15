@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from "jquery";
+import ExperienceItem from './ExperienceItem'
 
 class Experience extends Component {
 
@@ -16,23 +17,12 @@ class Experience extends Component {
 
     const data = this.props.main;
 
-    let self = this;
-
-    function experienceCallback() {
-      this.setState({
-        right: "0",
-        display: "block",
-        itemClass: "card experience-item animated appear-animated"
-      });
-    }
-
-
     $(document).ready(function(){
-      $('#experience').viewportChecker({callbackFunction: experienceCallback.bind(self), offset: 300});
+      $('#experience').viewportChecker({classToRemove: 'invisible', classToAdd: 'visible fadeInRight', offset: 300});
     });
 
     return (
-      <section className="experience animated" id="experience" style={{right: this.state.right}}>
+      <section className="experience animated invisible" id="experience">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
@@ -41,12 +31,7 @@ class Experience extends Component {
             </div>
             <div className="col-lg-9 row">
               {data.list.map((item, i) =>
-                <div className={self.state.itemClass} key={"place_" + i}
-                     style={{display: this.state.display}}>
-                  <div className="experience-name animated">{item.title}</div>
-                  <em>from: {item.start}, to: {item.end}</em>
-                  <div className="experience-job">{item.description}</div>
-                </div>
+                <ExperienceItem key={"place_" + i} i={i} item={item}/>
               )}
             </div>
           </div>
