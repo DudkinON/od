@@ -79,7 +79,7 @@ import jQuery from 'jquery'
 
         // Check if the offset is percentage based
         if (String(objOptions.offset).indexOf("%") > 0)
-          objOptions.offset = (parseInt(objOptions.offset) / 100) * boxSize.height;
+          objOptions.offset = (parseInt(objOptions.offset, 10) / 100) * boxSize.height;
 
         // Get the raw start and end positions
         let rawStart = (!objOptions.scrollHorizontal) ? $obj.offset().top : $obj.offset().left,
