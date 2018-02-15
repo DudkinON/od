@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ContactItem from './ContactItem'
+import $ from "jquery";
 
 
 class Contacts extends Component {
@@ -8,8 +9,15 @@ class Contacts extends Component {
 
     const social = this.props.social;
 
+    $(document).ready(function(){
+      $('#contacts').viewportChecker({
+        classToRemove: 'invisible',
+        classToAdd: 'visible fadeInRight',
+        offset: 300});
+    });
+
     return (
-      <section className="contact-container" id="contact">
+      <section className="contact-container animated invisible" id="contacts">
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-lg-2">
@@ -20,7 +28,7 @@ class Contacts extends Component {
               <div className="contact">
                 <nav className="social-icon">
                   {social.map( (item, i) =>
-                    <ContactItem item={item} key={"social_" + i}/>
+                    <ContactItem item={item} key={"social_" + i} i={i}/>
                   )}
                 </nav>
               </div>
