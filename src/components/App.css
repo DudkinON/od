@@ -14,6 +14,10 @@ img {
     max-width: 100%;
 }
 
+.animated {
+    transition: all 2s ease;
+}
+
 #skills {
     position: relative;
     transition: all 1s ease;
@@ -139,6 +143,7 @@ img {
     position: relative;
     display: block;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .card-item .card-container {
@@ -279,6 +284,7 @@ img {
     background-color: #fff;
     color: #ccc;
     padding: 80px 0;
+    position: relative;
 }
 
 .experience-title {
@@ -288,9 +294,14 @@ img {
 }
 
 .experience-name {
+    height: 30px;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 16px;
     color: #999;
+}
+
+.experience-item:hover .experience-name {
+    font-size: 20px;
 }
 
 .experience-item {
@@ -298,6 +309,11 @@ img {
     padding: 10px;
     display: inline-block;
     margin: 5px 2px;
+    cursor: default;
+}
+
+.experience-item:hover {
+    color: #6c757d;
 }
 
 /* TODO: Section education */
@@ -305,6 +321,7 @@ img {
     background-image: linear-gradient(rgb(8, 208, 210) 38%, rgb(184, 253, 253) 100%);
     padding: 100px 0;
     color: #fff;
+    position: relative;
 }
 
 .education-title {
@@ -322,7 +339,7 @@ img {
 }
 
 .education-place {
-
+    text-decoration: none;
 }
 
 .education-place > a {
@@ -337,6 +354,7 @@ img {
 /* TODO: Certificates section */
 .certificates {
     padding: 80px 0;
+    position: relative;
 }
 
 .certificates-title {
@@ -406,6 +424,22 @@ img {
     margin-top: 25px;
     margin-bottom: 10px;
     border-top: 1px solid #09c3c5;
+}
+
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.zoom {
+    animation-name: zoomIn;
 }
 
 @media screen and (max-width: 992px) {
