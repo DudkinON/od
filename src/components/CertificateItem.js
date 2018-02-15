@@ -29,14 +29,12 @@ class CertificateItem extends React.Component {
       context = 0;
     }
 
-    $(document).ready(
-     function () {
+    $(document).ready(function () {
        $('#' + id ).viewportChecker({
          classToRemove: 'invisible',
          classToAdd: 'visible fadeInDown',
          offset: 100});
-     }
-    );
+     });
 
     function showCertificate() {
       const strWindowFeatures = "location=yes,width=800,height=600,scrollbars=yes,status=yes";
