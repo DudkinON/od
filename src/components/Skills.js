@@ -22,18 +22,23 @@ class Skills extends Component {
     }
 
     function skillsCallback() {
-      $('#skills').css("left", "0");
       self.state.functions.forEach(function (f) {
         f();
       });
     }
+
     $(document).ready(function(){
-      $('#skills').viewportChecker({callbackFunction: skillsCallback});
+      $('#skills').viewportChecker({
+        classToRemove: 'invisible',
+        classToAdd: 'visible fadeInLeft',
+        callbackFunction: skillsCallback,
+        offset: 300
+      });
     });
 
 
     return (
-      <section className="skills" id="skills" style={{left: "-100%"}}>
+      <section className="skills animated invisible" id="skills">
         <div className="container">
           <div className="row">
             <div className="col-lg-2">
