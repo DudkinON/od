@@ -1,5 +1,6 @@
 import React from 'react'
 import CertificateItem from './CertificateItem'
+import $ from "jquery";
 
 
 class Certificates extends React.Component {
@@ -7,6 +8,7 @@ class Certificates extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      right: "-100%",
       error: null,
       isLoaded: false,
       items: []
@@ -38,13 +40,21 @@ class Certificates extends React.Component {
 
     const { error, isLoaded, items } = this.state;
 
+    $(document).ready(function(){
+      $('#certificate').viewportChecker({
+        classToRemove: 'invisible',
+        classToAdd: 'visible fadeInRight',
+        offset: 300});
+    });
+
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+
       return (
-        <section className="certificates" id="certificate">
+        <section className="certificates animated invisible" id="certificate">
           <div className="container">
             <div className="row">
               <div className="col-lg-2 mr-4">
@@ -53,7 +63,7 @@ class Certificates extends React.Component {
               </div>
               <div className="col-lg-10 row">
                 {items.map( (item, i) =>
-                  <CertificateItem item={item} key={"cert_" + i} />
+                  <CertificateItem item={item} key={"cert_" + i} i={i} />
                 )}
               </div>
             </div>

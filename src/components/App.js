@@ -11,8 +11,11 @@ import Contacts from './Contacts'
 import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
+import './animate.css'
 import './App.css';
-import * as viewportChecker from './jq.vp'
+import * as viewportChecker from './jq.vp';
+
+
 class App extends Component {
 
   render() {
