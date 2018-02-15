@@ -27,6 +27,10 @@ class Skills extends Component {
     }
 
     function skillsCallback() {
+      /**
+       * In the loop run each function
+       * @return void:
+       */
       self.state.functions.forEach(function (f) {
         f();
       });
