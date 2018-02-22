@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import SkillsBlock from './SkillsBlock'
 import $ from 'jquery'
+import { connect } from "react-redux";
+import { getSkills } from '../actions/getSkills'
 
 class Skills extends Component {
 
@@ -15,7 +17,8 @@ class Skills extends Component {
 
     let self = this;
 
-    const data = this.props.main;
+    this.props.onGetSkills();
+
 
     function asyncCallback(func) {
       /**
@@ -51,10 +54,10 @@ class Skills extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-2">
-              <h3 className="skills-title">{data.title}</h3>
+              <h3 className="skills-title">Skills</h3>
               <div className="white-icon"><i className="fas fa-file-code"/></div>
             </div>
-            <SkillsBlock data={data.list} asyncCallback={asyncCallback}/>
+            <SkillsBlock />
           </div>
         </div>
       </section>
@@ -62,4 +65,11 @@ class Skills extends Component {
   }
 }
 
-export default Skills;
+export default connect(
+  state => ({}),
+  dispatch => ({
+    onGetSkills: () => {
+      dispatch(getSkills());
+    }
+  })
+)(Skills);
