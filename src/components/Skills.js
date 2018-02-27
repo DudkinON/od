@@ -6,36 +6,20 @@ import { getSkills } from '../actions/getSkills'
 
 class Skills extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      functions: []
-    };
-  }
-
   render() {
 
-    let self = this;
-
     this.props.onGetSkills();
-
-
-    function asyncCallback(func) {
-      /**
-       * Get function and add to array
-       * @param func: (function)
-       * @return void:
-       */
-      self.state.functions.push(func);
-    }
 
     function skillsCallback() {
       /**
        * In the loop run each function
        * @return void:
        */
-      self.state.functions.forEach(function (f) {
-        f();
+
+      let elements = document.getElementsByClassName('progress-bar');
+      [].forEach.call(elements, function(e) {
+        const percent = e.getAttribute('aria-valuenow');
+        e.style.width = percent + '%';
       });
     }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SkillItem from './SkillItem'
+import {connect} from "react-redux";
 
 
 class SkillsBlock extends Component {
@@ -7,21 +8,36 @@ class SkillsBlock extends Component {
 
   render() {
 
-    const data = this.props.data;
+    const data = this.props.skills;
 
-    return (
-      <div className="col-lg-10 row">
-        {data.map((item, i) =>
-          <div className="col-md-6 row block-offset" key={"skill_" + i}>
-            <div className="skills-header">{item.title}</div>
-            {item.list.map((elem, j) =>
-              <SkillItem elem={elem} key={"skill_item_" + j} asyncCallback={this.props.asyncCallback}/>
-            )}
-          </div>
-        )}
-      </div>
-    );
+    let block;
+
+    if (data.length) {
+      block = (
+        <div className="col-lg-10 row">
+          {data.map((item, i) =>
+            <div className="col-md-6 row block-offset" key={"skill_" + i}>
+              <div className="skills-header">{item.title}</div>
+              {item.skills.map( (elem, j) =>
+                <SkillItem elem={elem} key={j} />
+              )}
+            </div>
+          )}
+        </div>
+      );
+    } else {
+      block = (
+        <div className="col-lg-10 row">
+          <h3 className="text-danger">Server is unavailable</h3>
+        </div>
+      );
+    }
+
+    return block;
   }
 }
 
-export default SkillsBlock;
+export default connect(
+  state => ({skills: state.skills}),
+  dispatch => ({})
+)(SkillsBlock);
