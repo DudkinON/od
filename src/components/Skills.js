@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import SkillsBlock from './SkillsBlock'
-import $ from 'jquery'
+import SkillsBlock from './SkillsBlock';
 import { connect } from "react-redux";
 import { getSkills } from '../actions/getSkills'
 
@@ -8,29 +7,7 @@ class Skills extends Component {
 
   render() {
 
-    this.props.onGetSkills();
-
-    function skillsCallback() {
-      /**
-       * In the loop run each function
-       * @return void:
-       */
-
-      let elements = document.getElementsByClassName('progress-bar');
-      [].forEach.call(elements, function(e) {
-        const percent = e.getAttribute('aria-valuenow');
-        e.style.width = percent + '%';
-      });
-    }
-
-    $(document).ready(function(){
-      $('#skills').viewportChecker({
-        classToRemove: 'invisible',
-        classToAdd: 'visible fadeInLeft',
-        callbackFunction: skillsCallback,
-        offset: 300
-      });
-    });
+    this.props.onGetSkills(this.props.base + this.props.skills.url);
 
 
     return (
@@ -38,7 +15,7 @@ class Skills extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-2">
-              <h3 className="skills-title">Skills</h3>
+              <h3 className="skills-title">{this.props.skills.title}</h3>
               <div className="white-icon"><i className="fas fa-file-code"/></div>
             </div>
             <SkillsBlock />
@@ -50,10 +27,10 @@ class Skills extends Component {
 }
 
 export default connect(
-  state => ({}),
+  state => ({skills: state.provider.skills, base: state.provider.base}),
   dispatch => ({
-    onGetSkills: () => {
-      dispatch(getSkills());
+    onGetSkills: (url) => {
+      dispatch(getSkills(url));
     }
   })
 )(Skills);
