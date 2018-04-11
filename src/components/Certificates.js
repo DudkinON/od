@@ -9,7 +9,7 @@ class Certificates extends React.Component {
 
   render() {
 
-    this.props.onGetCertificate(this.props.certificates.url);
+    this.props.onGetCertificate(this.props.base + this.props.certificates.url);
 
 
     return (
@@ -29,7 +29,7 @@ class Certificates extends React.Component {
 }
 
 export default connect(
-  state => ({certificates: state.provider.certificates}),
+  state => ({certificates: state.provider.certificates, base: state.provider.base}),
   dispatch => ({
     onGetCertificate: (url) => {
       dispatch(getCertificate(url));
