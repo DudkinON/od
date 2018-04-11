@@ -1,17 +1,10 @@
-import React, {Component} from 'react'
-import $ from "jquery";
+import React, {Component} from 'react';
+import {connect} from "react-redux";
 
 
 class Footer extends Component {
 
   render() {
-
-    $(document).ready(function(){
-      $('#footer').viewportChecker({
-        classToRemove: 'invisible',
-        classToAdd: 'visible zoomIn',
-        offset: 10});
-    });
 
     return (
       <footer className="invisible" id="footer">
@@ -19,7 +12,7 @@ class Footer extends Component {
           <div className="row">
             <div className="col-lg-12">
               <div className="footer">
-                <span>Design by Oleg Dudkin</span>
+                <span>{this.props.copyright}</span>
               </div>
             </div>
           </div>
@@ -29,4 +22,7 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default connect(
+  state => ({copyright: state.provider.copyright}),
+  dispatch => ({})
+)(Footer);
