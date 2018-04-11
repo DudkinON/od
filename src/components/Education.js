@@ -1,37 +1,19 @@
 import React, {Component} from 'react';
-import $ from "jquery";
+import {connect} from "react-redux";
+import {getEducation} from "../actions/getEducation";
+
 
 class Education extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      left: "-100%",
-      textClass: "education-item",
-    };
-  }
-
-
   render() {
 
-    const data = this.props.main;
+    const data = this.props.education;
 
-    let self = this;
-
-    function educationCallback() {
-      self.setState({
-        left: "0",
-        textClass: "education-item appear-animated"
-      });
-    }
-
-    $(document).ready(function(){
-      $('#education').viewportChecker({callbackFunction: educationCallback.bind(self), offset: 300});
-    });
+    if (this.props.education.title === undefined) this.props.onGetEducation('http://0.0.0.0:5000' + this.props.url);
 
 
     return (
-      <section className="education animated" id="education" style={{left: self.state.left}}>
+      <section className="education animated invisible" id="education">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
@@ -39,7 +21,7 @@ class Education extends Component {
               <div className="white-icon"><i className="fas fa-graduation-cap" aria-hidden="true"/></div>
             </div>
             <div className="col-lg-9">
-              <div className={this.state.textClass}>
+              <div className="education-item animated invisible">
                 <h4>{data.name}</h4>
                 <span>{data.description}</span>
                 <p>{data.specialisation}</p>
@@ -56,4 +38,11 @@ class Education extends Component {
   }
 }
 
-export default Education;
+export default connect(
+  state => ({url: state.provider.education.url, education: state.education}),
+  dispatch => ({
+    onGetEducation: (url) => {
+      dispatch(getEducation(url));
+    }
+  })
+)(Education);
