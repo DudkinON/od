@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {getInfo} from "../actions/getInfo";
 
 
 class Header extends Component {
+
   render() {
-    const data = this.props.main;
+
+    if (this.props.info.title === undefined) this.props.onGetInfo(this.props.base + this.props.header.url);
+
     function about() {
       return window.location.assign('/#about');
     }
@@ -13,11 +18,11 @@ class Header extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <h1 className="first-header">{data.title}</h1>
+              <h1 className="first-header">{this.props.info.title}</h1>
               <hr className="first-hr"/>
-              <div className="first-slogan">{data.slogan}</div>
+              <div className="first-slogan"/>
               <h2 className="first-description">
-                <span>{data.description}</span>
+                <span>{this.props.info.slogan}</span>
               </h2>
               <div className="arrow-block">
                 <div className="content">
@@ -36,4 +41,11 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect(
+  state => ({header: state.provider.header, info: state.info, base: state.provider.base}),
+  dispatch => ({
+    onGetInfo: (url) => {
+      dispatch(getInfo(url));
+    }
+  })
+)(Header);
