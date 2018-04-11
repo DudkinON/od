@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import ContactItem from './ContactItem'
-import $ from "jquery";
+import React, {Component} from 'react';
+import ContactItem from './ContactItem';
+import {connect} from "react-redux";
+import {getSocial} from "../actions/getSocial";
 
 
 class Contacts extends Component {
@@ -9,12 +10,8 @@ class Contacts extends Component {
 
     const social = this.props.social;
 
-    $(document).ready(function(){
-      $('#contacts').viewportChecker({
-        classToRemove: 'invisible',
-        classToAdd: 'visible fadeInRight',
-        offset: 300});
-    });
+    if (this.props.social.length < 1) this.props.onGetSocial(this.props.base + this.props.url);
+
 
     return (
       <section className="contact-container animated invisible" id="contacts">
@@ -40,4 +37,11 @@ class Contacts extends Component {
   }
 }
 
-export default Contacts;
+export default connect(
+  state => ({url: state.provider.social.url, social: state.social, base: state.provider.base}),
+  dispatch => ({
+    onGetSocial: (url) => {
+      dispatch(getSocial(url));
+    }
+  })
+)(Contacts);
