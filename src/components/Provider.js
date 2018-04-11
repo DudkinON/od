@@ -30,7 +30,8 @@ const Provider = {
   social: {
     url: "/social"
   },
-  website: "oleg-dudkin.com"
+  website: "oleg-dudkin.com",
+  copyright: "Design by Oleg Dudkin"
 };
 
 
