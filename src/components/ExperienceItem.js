@@ -1,25 +1,31 @@
 import React, {Component} from 'react';
-import $ from "jquery";
+import {connect} from "react-redux";
+
 
 class ExperienceItem extends Component {
 
   render() {
 
-    const item = this.props.item;
-    const id = "place_" + this.props.i;
-
-    $(document).ready(function(){
-      $('#' + id).viewportChecker({classToRemove: 'invisible', classToAdd: 'visible fadeInUp', offset: 300});
-    });
+    const experience = this.props.experience;
 
     return (
-      <div className="card experience-item animated invisible" id={id}>
-        <div className="experience-name animated">{item.title}</div>
-        <em>from: {item.start}, to: {item.end}</em>
-        <div className="experience-job">{item.description}</div>
+      <div className="col-lg-9 row">
+        {experience.map( (item, i) =>
+          <div className="card experience-item animated invisible"
+               id={"experience_" + i}
+               key={"experience_key_" + i}>
+            <div className="experience-name animated">{item.title}</div>
+            <em>from: {item.start}, to: {item.end}</em>
+            <div className="experience-job">{item.description}</div>
+          </div>
+        )}
       </div>
     );
   }
 }
 
-export default ExperienceItem;
+
+export default connect(
+  state => ({experience: state.experience}),
+  dispatch => ({})
+)(ExperienceItem);
