@@ -1,5 +1,5 @@
 const Provider = {
-  base: 'http://0.0.0.0:5000',
+  base: 'https://api.oleg-dudkin.com',
   header: {
     url: "/info"
   },
