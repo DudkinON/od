@@ -9,7 +9,7 @@ class Education extends Component {
 
     const data = this.props.education;
 
-    if (this.props.education.title === undefined) this.props.onGetEducation('http://0.0.0.0:5000' + this.props.url);
+    if (this.props.education.title === undefined) this.props.onGetEducation(this.props.base + this.props.url);
 
 
     return (
@@ -39,7 +39,7 @@ class Education extends Component {
 }
 
 export default connect(
-  state => ({url: state.provider.education.url, education: state.education}),
+  state => ({url: state.provider.education.url, education: state.education, base: state.provider.base}),
   dispatch => ({
     onGetEducation: (url) => {
       dispatch(getEducation(url));
