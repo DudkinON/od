@@ -606,3 +606,9 @@ polygon.arrow-middle {
 polygon.arrow-top {
     opacity: 0.5
 }
+
+@media (max-width: 1100px) {
+    .skills-header {
+        font-size: 20px;
+    }
+}
