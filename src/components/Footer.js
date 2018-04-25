@@ -5,9 +5,13 @@ import {connect} from "react-redux";
 class Footer extends Component {
 
   render() {
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "";
+    else self.cls = "invisible";
 
     return (
-      <footer className="invisible" id="footer">
+      <footer className={self.cls} id="footer">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -23,6 +27,6 @@ class Footer extends Component {
 }
 
 export default connect(
-  state => ({copyright: state.provider.copyright}),
+  state => ({copyright: state.provider.copyright, isMobile: state.mobile}),
   dispatch => ({})
 )(Footer);
