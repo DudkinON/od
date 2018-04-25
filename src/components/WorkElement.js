@@ -12,7 +12,7 @@ class WorkElement extends React.Component {
     return (
       <div className="col-lg-10 row">
         {items.map( (item, i) =>
-          <WorksItem key={"work_key_" + i} item={item}/>
+          <WorksItem key={"work_key_" + i} item={item} isMobile={this.props.isMobile}/>
         )}
       </div>
     );
@@ -20,6 +20,6 @@ class WorkElement extends React.Component {
 }
 
 export default connect(
-  state => ({works: state.works}),
+  state => ({works: state.works, isMobile: state.mobile}),
   dispatch => ({})
 )(WorkElement);

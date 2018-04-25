@@ -9,15 +9,20 @@ class Works extends Component {
 
   render() {
 
-    this.props.onGetWorks(this.props.base + this.props.works.url);
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "works";
+    else self.cls = "works animated invisible";
+
+    self.props.onGetWorks(self.props.base + self.props.works.url);
 
 
     return (
-      <section className="works animated invisible" id="works">
+      <section className={self.cls} id="works">
         <div className="container">
           <div className="row">
             <div className="col-lg-2">
-              <h3 className="skills-title">{this.props.works.title}</h3>
+              <h3 className="skills-title">{self.props.works.title}</h3>
               <div className="white-icon"><i className="fas fa-file-code"/></div>
             </div>
             <WorkElement />
@@ -30,7 +35,7 @@ class Works extends Component {
 }
 
 export default connect(
-  state => ({works: state.provider.works, base: state.provider.base}),
+  state => ({works: state.provider.works, base: state.provider.base, isMobile: state.mobile}),
   dispatch => ({
     onGetWorks: (url) => {
       dispatch(getWorks(url));
