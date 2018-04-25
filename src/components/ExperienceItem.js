@@ -13,7 +13,7 @@ class ExperienceItem extends Component {
     else self.cls = "card experience-item animated invisible";
 
     return (
-      <div className="col-lg-9 row">
+      <div className="col-lg-9">
         {experience.map( (item, i) =>
           <div className={self.cls}
                id={"experience_" + i}
