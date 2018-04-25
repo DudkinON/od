@@ -8,6 +8,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
 import App from './components/App';
+import Img from './components/Img';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -20,6 +21,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App} />
+      <Route path="/img/certificates/:filename" component={Img}/>
     </Router>
   </Provider>,
   document.getElementById('root'));
