@@ -598,6 +598,15 @@ img {
      padding: 0 25px 25px 25px;
 }
 
+.skills-separator {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
 polygon {
     fill: #09c3c5;
     transition: all .3s ease-out;
@@ -620,5 +629,8 @@ polygon.arrow-top {
 @media (max-width: 767px) {
     .skill-offset {
         padding: 0 0 25px 25px;
+    }
+    .skills-separator {
+        margin-left: 0;
     }
 }
