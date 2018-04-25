@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 
 class SkillItem extends Component {
@@ -22,7 +21,4 @@ class SkillItem extends Component {
 }
 
 
-export default connect(
-  state => ({}),
-  dispatch => ({})
-)(SkillItem);
+export default SkillItem;
