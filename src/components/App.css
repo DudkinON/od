@@ -598,7 +598,7 @@ img {
      padding: 0 25px 25px 25px;
 }
 
-.skills-separator {
+.row-separator {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -630,7 +630,7 @@ polygon.arrow-top {
     .skill-offset {
         padding: 0 0 25px 25px;
     }
-    .skills-separator {
+    .row-separator {
         margin-left: 0;
     }
 }
