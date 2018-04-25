@@ -16,7 +16,7 @@ class SkillsBlock extends Component {
       block = (
         <div className="col-lg-10 row">
           {data.map((item, i) =>
-            <div className="col-md-6 row block-offset" key={"skill_" + i}>
+            <div className="col-md-6 row skill-offset" key={"skill_" + i}>
               <div className="skills-header">{item.title}</div>
               {item.skills.map( (elem, j) =>
                 <SkillItem elem={elem} key={j} />
