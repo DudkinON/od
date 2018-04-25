@@ -10,7 +10,7 @@ class WorkElement extends React.Component {
     const items = this.props.works;
 
     return (
-      <div className="col-lg-10 row">
+      <div className="col-lg-10 row-separator">
         {items.map( (item, i) =>
           <WorksItem key={"work_key_" + i} item={item} isMobile={this.props.isMobile}/>
         )}
