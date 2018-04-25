@@ -16,7 +16,7 @@ import { worksCallback } from '../actions/worksCallback';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fa/css/fontawesome-all.min.css';
-import 'animate.css'
+import 'animate.css';
 import './App.css';
 import $ from "jquery";
 import './jq.vp';
@@ -24,15 +24,21 @@ import './jq.vp';
 class App extends Component {
 
   render() {
+    const self = this;
 
     $(document).ready(function(){
-      runAnimation('#skills', 'fadeInLeft', skillsCallback);
-      runAnimation('#experience', 'fadeInRight', mainCallback('experience-item', 'fadeInUp'));
-      runAnimation('#education', 'fadeInLeft', educationCallback);
-      runAnimation('#certificate', 'fadeInRight', mainCallback('certificate', 'fadeInDown'));
-      runAnimation('#works', 'fadeInLeft', worksCallback);
-      runAnimation('#contacts', 'fadeInRight', mainCallback('social-link', 'zoomIn'));
-      runAnimation('#footer', 'zoomIn', () => {}, 10);
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+      & window.screen.width < 760 && window.screen.height < 760) {
+        self.props.onIsMobile();
+      } else {
+        runAnimation('#skills', 'fadeInLeft', skillsCallback);
+        runAnimation('#experience', 'fadeInRight', mainCallback('experience-item', 'fadeInUp'));
+        runAnimation('#education', 'fadeInLeft', educationCallback);
+        runAnimation('#certificate', 'fadeInRight', mainCallback('certificate', 'fadeInDown'));
+        runAnimation('#works', 'fadeInLeft', worksCallback);
+        runAnimation('#contacts', 'fadeInRight', mainCallback('social-link', 'zoomIn'));
+        runAnimation('#footer', 'zoomIn', () => {}, 10);
+      }
     });
 
     return (
@@ -52,6 +58,6 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({provider: state.provider}),
-  dispatch => ({})
+  state => ({provider: state.provider, isMobile: state.mobile}),
+  dispatch => ({onIsMobile: () => {dispatch({type: 'IS_MOBILE', payload: true})}})
 )(App);
