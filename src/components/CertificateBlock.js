@@ -23,7 +23,7 @@ class CertificateBlock extends React.Component {
     const items = this.props.certificates;
 
     return (
-      <div className="col-lg-10 row">
+      <div className="col-lg-10 row-separator">
         {items.map( (item, i) =>
           <CertificateItem item={item} key={"certificate_key_" + i} isMobile={this.props.isMobile}/>
         )}
