@@ -5,13 +5,17 @@ import {connect} from "react-redux";
 class ExperienceItem extends Component {
 
   render() {
+    const self = this;
 
-    const experience = this.props.experience;
+    const experience = self.props.experience;
+
+    if (self.props.isMobile) self.cls = "card experience-item";
+    else self.cls = "card experience-item animated invisible";
 
     return (
       <div className="col-lg-9 row">
         {experience.map( (item, i) =>
-          <div className="card experience-item animated invisible"
+          <div className={self.cls}
                id={"experience_" + i}
                key={"experience_key_" + i}>
             <div className="experience-name animated">{item.title}</div>
@@ -26,6 +30,6 @@ class ExperienceItem extends Component {
 
 
 export default connect(
-  state => ({experience: state.experience}),
+  state => ({experience: state.experience, isMobile: state.mobile}),
   dispatch => ({})
 )(ExperienceItem);

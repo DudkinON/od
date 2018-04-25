@@ -7,14 +7,19 @@ class Experience extends Component {
 
   render() {
 
-    this.props.onGetExperience(this.props.base + this.props.experience.url);
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "experience";
+    else self.cls = "experience animated invisible";
+
+    self.props.onGetExperience(self.props.base + self.props.experience.url);
 
     return (
-      <section className="experience animated invisible" id="experience">
+      <section className={self.cls} id="experience">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
-              <h3 className="experience-title">{this.props.experience.title}</h3>
+              <h3 className="experience-title">{self.props.experience.title}</h3>
               <div className="icon"><i className="fas fa-briefcase"/></div>
             </div>
             <ExperienceItem />
@@ -27,7 +32,7 @@ class Experience extends Component {
 
 
 export default connect(
-  state => ({experience: state.provider.experience, base: state.provider.base}),
+  state => ({experience: state.provider.experience, base: state.provider.base, isMobile: state.mobile}),
   dispatch => ({
     onGetExperience: (url) => {
       dispatch(getExperience(url));
