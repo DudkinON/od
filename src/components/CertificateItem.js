@@ -32,7 +32,7 @@ class CertificateItem extends React.Component {
          onClick={redirect(item.url)}
          onMouseEnter={this.toggle.bind(this)} onMouseLeave={this.toggle.bind(this)}>
         <div className="card-item">
-          <img src={item.images} alt={item.title} width="480" height="300"/>
+          <img src={item.images} alt={item.title} />
           <div className="card-container animated" style={{opacity: context}}>
             <h6>{item.title}</h6>
             <span>{item.description}</span>
