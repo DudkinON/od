@@ -6,11 +6,16 @@ class ContactItem extends Component {
 
   render() {
 
-    const item = this.props.item;
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "social-link";
+    else self.cls = "social-link animated invisible";
+
+    const item = self.props.item;
 
 
     return (
-      <div className="social-link animated invisible" onClick={redirect(item.url)}>
+      <div className={self.cls} onClick={redirect(item.url)}>
         <i className={item.style} data-toggle="tooltip" data-placement="bottom" title={item.title}/>
       </div>
     );

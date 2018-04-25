@@ -8,13 +8,18 @@ class Contacts extends Component {
 
   render() {
 
-    const social = this.props.social;
+    const self = this;
 
-    if (this.props.social.length < 1) this.props.onGetSocial(this.props.base + this.props.url);
+    if (self.props.isMobile) self.cls = "contact-container" ;
+    else self.cls = "contact-container animated invisible" ;
+
+    const social = self.props.social;
+
+    if (self.props.social.length < 1) self.props.onGetSocial(self.props.base + self.props.url);
 
 
     return (
-      <section className="contact-container animated invisible" id="contacts">
+      <section className={self.cls} id="contacts">
         <div className="container">
           <div className="row">
             <div className="col-md-4 col-lg-2">
@@ -25,7 +30,7 @@ class Contacts extends Component {
               <div className="contact">
                 <nav className="social-icon">
                   {social.map( (item, i) =>
-                    <ContactItem item={item} key={"social_" + i} i={i}/>
+                    <ContactItem item={item} key={"social_" + i} i={i} isMobile={self.props.isMobile}/>
                   )}
                 </nav>
               </div>
@@ -38,7 +43,12 @@ class Contacts extends Component {
 }
 
 export default connect(
-  state => ({url: state.provider.social.url, social: state.social, base: state.provider.base}),
+  state => ({
+    url: state.provider.social.url,
+    social: state.social,
+    base: state.provider.base,
+    isMobile: state.mobile
+  }),
   dispatch => ({
     onGetSocial: (url) => {
       dispatch(getSocial(url));
