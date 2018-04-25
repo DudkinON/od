@@ -14,7 +14,7 @@ class SkillsBlock extends Component {
 
     if (data.length) {
       block = (
-        <div className="col-lg-10 row">
+        <div className="col-lg-10 skills-separator">
           {data.map((item, i) =>
             <div className="col-md-6 row skill-offset" key={"skill_" + i}>
               <div className="skills-header">{item.title}</div>
@@ -27,7 +27,7 @@ class SkillsBlock extends Component {
       );
     } else {
       block = (
-        <div className="col-lg-10 row">
+        <div className="col-lg-10 skills-separator">
           <h3 className="text-danger">Server is unavailable</h3>
         </div>
       );
