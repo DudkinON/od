@@ -25,7 +25,7 @@ class CertificateBlock extends React.Component {
     return (
       <div className="col-lg-10 row">
         {items.map( (item, i) =>
-          <CertificateItem item={item} key={"certificate_key_" + i}/>
+          <CertificateItem item={item} key={"certificate_key_" + i} isMobile={this.props.isMobile}/>
         )}
       </div>
     );
@@ -33,6 +33,6 @@ class CertificateBlock extends React.Component {
 }
 
 export default connect(
-  state => ({certificates: state.certificates}),
+  state => ({certificates: state.certificates, isMobile: state.mobile}),
   dispatch => ({})
 )(CertificateBlock);

@@ -9,15 +9,20 @@ class Certificates extends React.Component {
 
   render() {
 
-    this.props.onGetCertificate(this.props.base + this.props.certificates.url);
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "certificates";
+    else self.cls = "certificates animated invisible";
+
+    self.props.onGetCertificate(self.props.base + self.props.certificates.url);
 
 
     return (
-      <section className="certificates animated invisible" id="certificate">
+      <section className={self.cls} id="certificate">
         <div className="container">
           <div className="row">
             <div className="col-lg-2 mr-4">
-              <h3 className="certificates-title">{this.props.certificates.title}</h3>
+              <h3 className="certificates-title">{self.props.certificates.title}</h3>
               <div className="icon text-center"><i className="fas fa-certificate" aria-hidden="true" /></div>
             </div>
             <CertificateBlock />
@@ -29,7 +34,7 @@ class Certificates extends React.Component {
 }
 
 export default connect(
-  state => ({certificates: state.provider.certificates, base: state.provider.base}),
+  state => ({certificates: state.provider.certificates, base: state.provider.base, isMobile: state.mobile}),
   dispatch => ({
     onGetCertificate: (url) => {
       dispatch(getCertificate(url));

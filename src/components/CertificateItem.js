@@ -18,6 +18,11 @@ class CertificateItem extends React.Component {
 
   render() {
 
+    const self = this;
+
+    if (self.props.isMobile) self.cls = "col-sm-12 col-md-6 text-center certificate";
+    else self.cls = "col-sm-12 col-md-6 text-center certificate animated invisible";
+
     const item = this.props.item;
     let context;
 
@@ -28,7 +33,7 @@ class CertificateItem extends React.Component {
     }
 
     return (
-      <div className="col-sm-12 col-md-6 text-center certificate animated invisible"
+      <div className={self.cls}
          onClick={redirect(item.url)}
          onMouseEnter={this.toggle.bind(this)} onMouseLeave={this.toggle.bind(this)}>
         <div className="card-item">
