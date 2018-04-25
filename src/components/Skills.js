@@ -7,11 +7,15 @@ class Skills extends Component {
 
   render() {
 
-    this.props.onGetSkills(this.props.base + this.props.skills.url);
+    const self = this;
 
+    self.props.onGetSkills(this.props.base + this.props.skills.url);
+
+    if (this.props.isMobile) self.cls = "skills";
+    else self.cls = "skills animated invisible";
 
     return (
-      <section className="skills animated invisible" id="skills">
+      <section className={self.cls} id="skills">
         <div className="container">
           <div className="row">
             <div className="col-lg-2">
@@ -27,7 +31,7 @@ class Skills extends Component {
 }
 
 export default connect(
-  state => ({skills: state.provider.skills, base: state.provider.base}),
+  state => ({skills: state.provider.skills, base: state.provider.base, isMobile: state.mobile}),
   dispatch => ({
     onGetSkills: (url) => {
       dispatch(getSkills(url));

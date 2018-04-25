@@ -19,7 +19,7 @@ class SkillsBlock extends Component {
             <div className="col-md-6 row skill-offset" key={"skill_" + i}>
               <div className="skills-header">{item.title}</div>
               {item.skills.map( (elem, j) =>
-                <SkillItem elem={elem} key={j} />
+                <SkillItem elem={elem} key={j} isMobile={this.props.isMobile} />
               )}
             </div>
           )}
@@ -38,6 +38,6 @@ class SkillsBlock extends Component {
 }
 
 export default connect(
-  state => ({skills: state.skills}),
+  state => ({skills: state.skills, isMobile: state.mobile}),
   dispatch => ({})
 )(SkillsBlock);
