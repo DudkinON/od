@@ -7,13 +7,18 @@ class Education extends Component {
 
   render() {
 
+    const self = this;
+
+    if (self.props.isMobile) {self.cls ="education"; self.clsEl = "education-item";}
+    else {self.cls = "education animated invisible"; self.clsEl = "education-item animated invisible";}
+
     const data = this.props.education;
 
-    if (this.props.education.title === undefined) this.props.onGetEducation(this.props.base + this.props.url);
+    if (self.props.education.title === undefined) self.props.onGetEducation(self.props.base + self.props.url);
 
 
     return (
-      <section className="education animated invisible" id="education">
+      <section className={self.cls} id="education">
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
@@ -21,7 +26,7 @@ class Education extends Component {
               <div className="white-icon"><i className="fas fa-graduation-cap" aria-hidden="true"/></div>
             </div>
             <div className="col-lg-9">
-              <div className="education-item animated invisible">
+              <div className={self.clsEl}>
                 <h4>{data.name}</h4>
                 <span>{data.description}</span>
                 <p>{data.specialisation}</p>
@@ -39,7 +44,12 @@ class Education extends Component {
 }
 
 export default connect(
-  state => ({url: state.provider.education.url, education: state.education, base: state.provider.base}),
+  state => ({
+    url: state.provider.education.url,
+    education: state.education,
+    base: state.provider.base,
+    isMobile: state.mobile
+  }),
   dispatch => ({
     onGetEducation: (url) => {
       dispatch(getEducation(url));
