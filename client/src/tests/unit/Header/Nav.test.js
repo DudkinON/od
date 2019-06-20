@@ -1,9 +1,22 @@
-import React from "react";
-import {shallow} from "enzyme";
+import React from 'react';
+import {shallow} from 'enzyme';
 import {Nav} from '../../../components/Header/Nav';
 
 
-it('should render correct', function () {
-  const nav = shallow(<Nav />);
-  expect(nav).toMatchSnapshot();
+
+describe('Nav', () => {
+  const props = {
+    links: [
+      {
+        url: '/url',
+        name: 'testURL'
+      }
+    ]
+  };
+  const nav = shallow(<Nav {...props}/>);
+
+  it('should render correct', function () {
+    expect(nav).toMatchSnapshot();
+  });
 });
+
