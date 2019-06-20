@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {TypingText} from '../../../../components/Landing/CenterBlock/TypingText';
+import {TypingText} from './TypingText';
 
 
 describe('TypingText', () => {

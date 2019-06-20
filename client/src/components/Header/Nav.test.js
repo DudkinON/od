@@ -1,7 +1,7 @@
 import React from 'react';
 import {StaticRouter} from 'react-router-dom'
 import {shallow, render} from 'enzyme';
-import {Nav} from '../../../components/Header/Nav';
+import {Nav} from './Nav';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import Root from '../../Root';
+import Root from './Root';
 
 
 it('should render properly', function () {

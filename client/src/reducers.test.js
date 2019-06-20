@@ -1,5 +1,5 @@
 import React from "react";
-import * as reducers from '../../reducers';
+import * as reducers from './reducers';
 
 
 describe("reducers", () => {

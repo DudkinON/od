@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {CenterBlock} from '../../../../components/Landing/CenterBlock';
+import {CenterBlock} from './index';
 
 describe('CenterBlock', () => {
   const centerBlock = shallow(<CenterBlock />);
