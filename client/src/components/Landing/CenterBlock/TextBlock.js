@@ -4,7 +4,10 @@ import TypingText from './TypingText';
 
 
 function mapStateToProps(state) {
-  return {typing: state.config.typing};
+  return {
+    typing: state.config.typing,
+    fullName: state.config.modules.header.fullName
+  };
 }
 
 export class TextBlock extends Component {
@@ -12,7 +15,7 @@ export class TextBlock extends Component {
   render() {
     return (
       <div className="center-block__name-block">
-        <h1 className="center-block__full-name">Oleg Dudkin</h1>
+        <h1 className="center-block__full-name">{this.props.fullName}</h1>
         <h6 className="center-block__type-text">
           <TypingText typing={this.props.typing}/>
           <span className="center-block__blinking-cursor">_</span>
