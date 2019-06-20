@@ -1,5 +1,6 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {StaticRouter} from 'react-router-dom'
+import {shallow, render} from 'enzyme';
 import {Nav} from '../../../components/Header/Nav';
 
 
@@ -13,10 +14,25 @@ describe('Nav', () => {
       }
     ]
   };
-  const nav = shallow(<Nav {...props}/>);
+  let nav = shallow(<Nav {...props}/>);
 
   it('should render correct', function () {
     expect(nav).toMatchSnapshot();
+  });
+
+  describe('testing Link', () => {
+
+    beforeAll(() => {
+      nav = render(<StaticRouter><Nav {...props}/></StaticRouter>);
+    });
+
+    it('should display link name', function () {
+      expect(nav.find('.header__nav_link').html()).toContain(props.links[0].name);
+    });
+
+    it('should display link url', function () {
+      expect(nav.find('li').html()).toContain(props.links[0].url);
+    });
   });
 });
 
