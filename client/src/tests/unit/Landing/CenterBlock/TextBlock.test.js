@@ -4,7 +4,9 @@ import {TextBlock} from '../../../../components/Landing/CenterBlock/TextBlock';
 
 
 describe('TextBlock',() => {
-  const textBlock = shallow(<TextBlock />);
+
+  const props = {fullName: "TestFullName"};
+  const textBlock = shallow(<TextBlock {...props}/>);
 
   it('should render properly', function () {
     expect(textBlock).toMatchSnapshot();
@@ -17,5 +19,9 @@ describe('TextBlock',() => {
 
   it('should contains `TypingText` component', function () {
     expect(textBlock.find('TypingText').exists()).toBe(true);
+  });
+
+  it('should find fullName', function () {
+    expect(textBlock.text()).toContain(props.fullName);
   });
 });
