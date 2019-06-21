@@ -31,7 +31,7 @@ describe('Nav', () => {
     });
 
     it('should display link url', function () {
-      expect(nav.find('li').html()).toContain(props.links[0].url);
+      expect(nav.html()).toContain(props.links[0].url);
     });
   });
 });
