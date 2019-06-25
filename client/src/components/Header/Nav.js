@@ -28,6 +28,7 @@ export class Nav extends Component {
           <img src="logo-small.svg" className="header__nav_logo" alt=""/>
         </Link>
         <ul className='header__nav_menu'>
+          <li className="push"/>
           {links.map(link => (
             <li key={link.name}>
               <Link className="header__nav_link" to={link.url} >
