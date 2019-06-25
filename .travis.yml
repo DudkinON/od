@@ -2,6 +2,6 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t dudkin/od -f ./client/Dockerfile.ci .
+  - docker build -t dudkin/od -f ./client/Dockerfile.ci ./client
 script:
   - docker run dudkin/od npm run test -- --coverage
