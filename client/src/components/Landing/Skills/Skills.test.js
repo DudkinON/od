@@ -5,7 +5,9 @@ import {Skills} from './index';
 describe('Skills', () => {
   const props = {
     onGetSkills: jest.fn(),
-    skills: []
+    skills: [],
+    header: "skills",
+    url: "/uri/to/skills"
   };
   const skills = shallow(<Skills {...props}/>);
 
@@ -14,6 +16,10 @@ describe('Skills', () => {
   });
 
   it('should call onGetSkills method', function () {
-    expect(props.onGetSkills).toHaveBeenCalled();
+    expect(props.onGetSkills).toHaveBeenCalledWith(props.url);
+  });
+
+  it('should display header', function () {
+    expect(skills.find('.skills__header--text').text()).toContain(props.header)
   });
 });
