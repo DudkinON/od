@@ -1,0 +1,156 @@
+.header {
+
+  &__nav {
+
+    &_checkbox {
+      display: none!important;
+    }
+
+    // animated icon
+    &_icon {
+      position: relative;
+      margin-top: 3rem;
+      transition: all .3s;
+      display: none;
+
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 2px;
+        background-color: $color-light-gray-2;
+        display: inline-block;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .2s;
+      }
+
+      &::before {
+        top: -.8rem;
+      }
+
+      &::after {
+        top: .8rem;
+      }
+    }
+
+    &_button {
+      background-color: transparent;
+      cursor: pointer;
+      height: 3rem;
+      width: 3rem;
+      position: fixed;
+      top: -.6rem;
+      right: 1rem;
+      border-radius: 50%;
+      z-index: 120;
+      text-align: center;
+      display: none;
+    }
+
+    &_top {
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      background: rgba(0,0,0,.3);
+      padding: 0;
+      margin: 0;
+    }
+
+    &_menu {
+      display: flex;
+      margin-right: 0;
+
+      & li {
+        list-style-type: none;
+        padding: 1rem 0;
+
+        & a {
+          color: #fff;
+          padding: 0 2rem;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          overflow: hidden;
+          height: 1.5em;
+
+          & span {
+            position: relative;
+            display: inline-block;
+            -webkit-transition: -webkit-transform 0.3s;
+            -moz-transition: -moz-transform 0.3s;
+            transition: transform 0.3s;
+
+            &::before {
+              position: absolute;
+              top: 100%;
+              content: attr(data-hover);
+              font-weight: 700;
+              -webkit-transform: translate3d(0,0,0);
+              -moz-transform: translate3d(0,0,0);
+              transform: translate3d(0,0,0);
+            }
+          }
+
+          &:hover span,
+          &:focus span {
+            -webkit-transform: translateY(-100%);
+            -moz-transform: translateY(-100%);
+            transform: translateY(-100%);
+          }
+        }
+      }
+    }
+
+    &_link {
+      display: block;
+      &:hover{
+        //transform: scale(1.1);
+      }
+    }
+
+    &_logo {
+      position: fixed;
+      top: .5rem;
+      left: 1rem;
+      color: #fff;
+      width: 3rem;
+      height: 3rem;
+      transform: scale(1);
+    }
+
+
+  }
+
+  &__nav_checkbox:checked ~ &__nav_menu {
+    display: block;
+    padding-top: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  &__nav_checkbox:checked {
+    display: block;
+  }
+
+  @include mq(mobile-md) {
+
+    &__nav {
+      &_button {
+        display: block;
+      }
+      &_menu {
+        display: none;
+      }
+    }
+
+    &__nav_link {
+      //display: none;
+    }
+  }
+}

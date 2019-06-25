@@ -1,0 +1,51 @@
+.center-block {
+
+  &__block {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-bg-dark;
+    background-image: linear-gradient(to right bottom, rgba($color-blue, 1), rgba($color-green, 1));
+  }
+
+  &__particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    cursor: inherit;
+  }
+
+  &__name-block {
+    text-align: center;
+    color: $color-light;
+    background-color: transparent;
+    animation: appear 1s ease-out 1s;
+    animation-fill-mode: backwards;
+  }
+
+  &__full-name {
+    font-weight: 200;
+    font-size: 4.5em;
+  }
+
+  &__type-text {
+    font-weight: 300;
+    font-size: 1.8em;
+  }
+
+
+  &__blinking-cursor {
+    font-weight: 300;
+    animation: 1s blink step-end infinite;
+  }
+
+  &__typing-box {
+    height: 1rem;
+    display: inline-block;
+  }
+}
