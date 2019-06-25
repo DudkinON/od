@@ -26,10 +26,6 @@
       "src/**/*.js",
       "!src/index.js",
       "!src/serviceWorker.js"
-    ],
-    "modulePaths": [
-      "node_modules",
-      "src"
     ]
   },
   "scripts": {
