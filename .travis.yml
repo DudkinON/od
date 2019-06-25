@@ -4,4 +4,4 @@ services:
 before_install:
   - docker build -t dudkin/od -f ./client/Dockerfile.ci ./client
 script:
-  - docker run dudkin/od npm test --updateSnapshot --coverage
+  - docker run dudkin/od npm run test:ci
