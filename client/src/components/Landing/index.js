@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import CenterBlock from './CenterBlock';
+import Skills from './Skills';
 
 
 export class Landing extends Component {
@@ -8,9 +8,10 @@ export class Landing extends Component {
     return (
       <div className="landing">
         <CenterBlock />
+        <Skills />
       </div>
     );
   }
 }
 
-export default connect(()=>{})(Landing);
+export default Landing;

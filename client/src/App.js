@@ -1,19 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Landing from './components/Landing';
-import Footer from './components/Footer';
+import Header from './components/Header/index';
+import Landing from './components/Landing/index';
+import Footer from './components/Footer/index';
 
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <Switch>
         <Route exact path="/" component={Landing}/>
       </Switch>
-      <Footer />
+      <Footer/>
     </BrowserRouter>
   );
 }
