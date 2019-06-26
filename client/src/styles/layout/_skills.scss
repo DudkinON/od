@@ -9,7 +9,7 @@
     border-radius: 4px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.23);
     width: 90vw;
-    padding: 1rem;
+    padding: 3rem;
   }
 
 
@@ -20,8 +20,8 @@
 
 
     &--text {
-      font-size: 2.8em;
-      font-weight: 200;
+      font-size: 2.3em;
+      font-weight: 300;
       text-transform: uppercase;
       color: $color-blue;
     }
@@ -73,6 +73,7 @@
     padding: 4rem;
     color: $color-green;
     transition: transform ease-out .5s;
+    backface-visibility: hidden;
 
     &::before {
       transition: opacity ease-out .4s;
@@ -103,6 +104,10 @@
       }
     }
 
+    @include mq(mobile-md) {
+      font-weight: 400;
+      font-size: .9em;
+    }
 
     &-container {
 
