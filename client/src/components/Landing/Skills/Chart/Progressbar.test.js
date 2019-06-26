@@ -41,7 +41,6 @@ describe('Progressbar', () => {
   it('should initialize value percent in the state', function () {
     expect(memoryRouter.find(Progressbar).dive().instance().state.percent).toBe(0);
   });
-
   it('should call setInterval', function () {
     expect(setInterval).toHaveBeenCalledWith(expect.any(Function), 25);
   });
