@@ -13,6 +13,6 @@ describe('Chart', () => {
   });
 
   it('should contains passed name', function () {
-    expect(chart.html()).toContain(props.name);
+    expect(chart.text()).toContain(props.name);
   });
 });

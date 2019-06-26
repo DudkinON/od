@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Link} from 'react-router-dom';
 
 export class Progressbar extends Component {
 
@@ -15,12 +15,11 @@ export class Progressbar extends Component {
     this.interval = setInterval(() => {
 
       const {percent} = this.state;
-
-      this.setState({ percent: percent + 1 });
-
-      if (percent === this.props.percent) {
+      if (percent === this.props.percent)
         clearInterval(this.interval);
-      }
+      else
+        this.setState({percent: percent + 1});
+
     }, 25);
   }
 
@@ -31,10 +30,18 @@ export class Progressbar extends Component {
   render() {
     return (
       <div className="progressbar" data-progress={this.state.percent}>
-        <div className="progressbar__body">
-          <div>{this.state.percent}%</div>
-          <img src={this.props.img} alt={this.props.name}/>
-        </div>
+        <Link to={this.props.url} className="progressbar__link">
+          <div className="progressbar__body">
+            <div>{this.state.percent}%</div>
+            <div className="progressbar__icon-container">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   viewBox={this.props.view}
+                   className="progressbar__icon">
+                <path d={this.props.img}/>
+              </svg>
+            </div>
+          </div>
+        </Link>
       </div>
     );
   }
