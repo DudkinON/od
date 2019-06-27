@@ -1,14 +1,28 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from './index';
-import {SET_SKILLS} from './types';
+import * as types from './types';
 import moxios from 'moxios';
 
 
 describe('actions', () => {
   const createMockStore = configureMockStore([thunk]);
   const mockStore = createMockStore({skills: []});
-  const data = [1,2,3];
+  let data = [1, 2, 3];
+  let url, action, expectedActions;
+
+  const setMock = () => {
+    moxios.stubRequest(url, {
+      status: 200,
+      response: data
+    });
+    mockStore.dispatch(action(url));
+  };
+
+  const check = done => moxios.wait(() => {
+    expect(mockStore.getActions()).toMatchObject(expectedActions);
+    done();
+  });
 
   beforeEach(function () {
     // import and pass your custom axios instance to this method
@@ -16,24 +30,36 @@ describe('actions', () => {
   });
 
   afterEach(function () {
+
     // import and pass your custom axios instance to this method
-    moxios.uninstall()
+    moxios.uninstall();
+    mockStore.clearActions();
+
+    url = '';
+    action = null;
+    expectedActions = null;
   });
 
-  it('should add action to the store', function (done) {
+  it('should add skills to the store', function (done) {
 
-    moxios.stubRequest('/skills', {
-      status: 200,
-      response: data
-    });
-    mockStore.dispatch(actions.getSkills('/skills'));
+    action = actions.getSkills;
+    url = '/skills';
+    expectedActions = [{type: types.SET_SKILLS, payload: data}];
 
-    moxios.wait(() => {
-      const expectedActions = [{type: SET_SKILLS, payload: data}];
-      expect(mockStore.getActions()).toMatchObject(expectedActions);
-      done();
-    })
+    setMock();
+
+    return check(done);
   });
 
+  it('should add certificates to the store', function (done) {
+
+    action = actions.getCertificates;
+    url = '/certificates';
+    expectedActions = [{type: types.SET_CERTIFICATES, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
 });
 
