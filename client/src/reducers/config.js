@@ -72,8 +72,15 @@ const conf = {
           header: 'Certificates',
           url: '/mock/certificates.json',
           button: 'Read more'
+        },
+        works: {
+          header: 'Works',
+          url: '/mock/works.json'
         }
       }
+    },
+    works: {
+      url: '/works'
     }
   }
 };
