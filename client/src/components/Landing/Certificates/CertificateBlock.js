@@ -19,7 +19,7 @@ export class CertificateBlock extends Component {
           <div className="certificates__view-mask">
             <h2 className="certificates__view-header">{this.props.title}</h2>
             <p className="certificates__view-description">{this.props.description}</p>
-            <div onClick={this.url} className="certificates__view-link">Read More</div>
+            <div onClick={this.url} className="certificates__view-link">{this.props.button}</div>
           </div>
         </div>
       </div>
