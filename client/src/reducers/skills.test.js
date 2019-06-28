@@ -16,7 +16,7 @@ it('should return state if state passed', function () {
   expect(skills(state, {})).toMatchObject(state)
 });
 
-it('should update state if pyload passed', function () {
+it('should update state if payload passed', function () {
   const state = [1,2,3,4,5];
   const action = {type: SET_SKILLS, payload: [1,2,3]};
   expect(skills(state, action)).toMatchObject(action.payload);
