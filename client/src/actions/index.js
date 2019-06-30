@@ -21,3 +21,10 @@ export const getWorks = url => dispatch => {
       return dispatch({type: types.SET_WORKS, payload: res.data});
   })
 };
+
+export const getContact = url => dispatch => {
+  return axios.get(url).then(res => {
+    if (res && res.data)
+      return dispatch({type: types.SET_CONTACT, payload: res.data});
+  })
+};
