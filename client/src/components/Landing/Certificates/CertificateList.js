@@ -4,16 +4,18 @@ import CertificateBlock from './CertificateBlock';
 
 function mapStateToProps(state) {
   return {
-    certificates: state.certificates
+    certificates: state.certificates,
+    button: state.config.modules.landing.parts.certificates.button
   };
 }
 
 export class CertificateList extends Component {
   render() {
+    const {button} = this.props;
     return (
       <div className="certificates__content">
         {this.props.certificates.map(cert => (
-          <CertificateBlock {...cert} key={cert.id} />
+          <CertificateBlock {...cert} button={button} key={cert.id}/>
         ))}
       </div>
     );

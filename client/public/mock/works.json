@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Traveler",
+    "description": "description of the work",
+    "img": "https://source.unsplash.com/1000x800?q=1"
+  },
+  {
+    "id": 2,
+    "name": "Tetris",
+    "description": "description of the work",
+    "img": "https://source.unsplash.com/1000x800?q=2"
+  },
+  {
+    "id": 3,
+    "name": "Web Zoomer",
+    "description": "description of the work",
+    "img": "https://source.unsplash.com/1000x800?q=3"
+  },
+  {
+    "id": 4,
+    "name": "US capitals",
+    "description": "description of the work",
+    "img": "https://source.unsplash.com/1000x800?q=4"
+  }
+]

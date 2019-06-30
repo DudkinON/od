@@ -67,8 +67,20 @@ const conf = {
         skills: {
           header: 'Skills',
           url: '/mock/skills.json'
+        },
+        certificates: {
+          header: 'Certificates',
+          url: '/mock/certificates.json',
+          button: 'Read more'
+        },
+        works: {
+          header: 'Works',
+          url: '/mock/works.json'
         }
       }
+    },
+    works: {
+      url: '/works'
     }
   }
 };

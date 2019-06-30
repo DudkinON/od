@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "title": "certificate Python dev",
+    "description": "Python fundamental programming concepts including data structures, networked application program interfaces, and databases",
+    "date": "06/20/2017",
+    "img": "/img/certificates/python.jpg",
+    "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/BY7EVUDY2ZVL"
+  },
+  {
+    "id": "2",
+    "title": "Programing with Python",
+    "description": "Python fundamental programming concepts including data structures, networked application program interfaces, and databases",
+    "date": "03/19/2017",
+    "img": "/img/certificates/python1.jpg",
+    "url": "https://stepik.org/cert/50994"
+  },
+  {
+    "id": "3",
+    "title": "Python intermediate",
+    "description": "Python fundamental programming concepts including data structures, networked application program interfaces, and databases",
+    "date": "05/01/2017",
+    "img": "/img/certificates/python2.jpg",
+    "url": "https://stepik.org/cert/54171"
+  },
+  {
+    "id": "4",
+    "title": "C++ fundamentals",
+    "description": "Introduction to programing with C++. Data structure, data types, recursion, compilation",
+    "date": "04/29/2017",
+    "img": "/img/certificates/cpp.jpg",
+    "url": "https://stepik.org/cert/54091"
+  },
+  {
+    "id": "5",
+    "title": "React - TDD",
+    "description": "How to use Test and Behavior Driven Development to build React applications",
+    "date": "14/15/2018",
+    "img": "/img/certificates/UC-B81542C8.jpg",
+    "url": "https://www.udemy.com/certificate/UC-B81542C8/"
+  }
+]

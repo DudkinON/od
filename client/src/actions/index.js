@@ -14,3 +14,10 @@ export const getCertificates = url => dispatch => {
       return dispatch({type: types.SET_CERTIFICATES, payload: res.data});
   })
 };
+
+export const getWorks = url => dispatch => {
+  return axios.get(url).then(res => {
+    if (res && res.data)
+      return dispatch({type: types.SET_WORKS, payload: res.data});
+  })
+};

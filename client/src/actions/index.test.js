@@ -61,5 +61,16 @@ describe('actions', () => {
 
     return check(done);
   });
+
+  it('should add works to the store', function (done) {
+
+    action = actions.getWorks;
+    url = '/works';
+    expectedActions = [{type: types.SET_WORKS, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
 });
 
