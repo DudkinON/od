@@ -18,6 +18,7 @@
   &__header {
 
     padding-bottom: 10rem;
+
     &--text {
       font-size: 2.5em;
       color: $color-light;
@@ -51,106 +52,116 @@
     min-width: 23rem;
   }
 
-
-  &__view {
-    margin: 1rem;
-    border: 1rem solid $color-light;
-    overflow: hidden;
+  &__thumb {
     position: relative;
-    text-align: center;
-    box-shadow: 1px 1px 2px $color-dark-gray;
-    cursor: default;
-    background: #fff  no-repeat center center;
-    transform: scaleY(1);
-    transition: all .7s ease-in-out;
+    display: inline-block;
+    overflow: hidden;
+    min-width: 23rem;
+    max-width: 33rem;
+    width: 100%;
+    color: $color-dark-gray;
+    text-align: left;
+    background: $color-light;
     border-radius: 2px;
-
-    &:hover {
-      box-shadow: 3px 3px 6px $color-dark-gray;
-    }
-
-    &-mask {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      background-color: rgba(132, 132, 132, 0.1);
-      transition: all 0.5s linear;
-      opacity: 0;
-      border-radius: 2px;
-    }
-
-    &-img {
-      display: block;
-      position: relative;
-      transform: scaleY(1);
-      transition: all .7s ease-in-out;
-    }
-
-    &-header {
-      text-transform: uppercase;
-      text-align: center;
-      position: relative;
-      font-size: .7em;
-      padding: 1rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-      background: transparent;
-      margin: 2rem 4rem 0 4rem;
-      transform: scale(0);
-      color: $color-dark-gray;
-      transition: all 0.5s linear;
-      opacity: 0;
-    }
-
-    &-description {
-      font-style: italic;
-      font-size: .7em;
-      position: relative;
-      text-align: center;
-      color: $color-dark-gray-1;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.5s linear;
-      padding: 2rem;
-    }
-
-    &-link {
-      font-size: .7em;
-      font-weight: 300;
-      display: inline-block;
-      text-decoration: none;
-      padding: .7rem 1.4rem;
-      background: $color-light-blue;
-      border-radius: 2px;
-      color: $color-light;
-      text-transform: uppercase;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.5s linear;
-      cursor: pointer;
-      backface-visibility: hidden;
-
-      &:hover {
-        color: #9fe4ff;
-      }
-    }
-
-    &:hover .certificates__view-mask {
-      opacity: 1;
-    }
-
-    &:hover .certificates__view-img {
-      transform: scale(10);
-      opacity: 0;
-    }
-
-    &:hover .certificates__view-header,
-    &:hover .certificates__view-description,
-    &:hover .certificates__view-link {
-      transform: scale(1);
-      opacity: 1;
-    }
+    cursor: pointer;
+    box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.3);
   }
+
+  &__description {
+    font-size: .7em;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px rgba($color-dark-gray, .4);
+    margin-bottom: 1rem;
+    opacity: 0;
+  }
+
+  &__thumb *,
+  &__thumb:before,
+  &__thumb:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+
+  &__thumb img {
+    max-width: 100%;
+    backface-visibility: hidden;
+    vertical-align: top;
+  }
+
+  &__thumb:before,
+  &__thumb:after {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    content: '';
+    background-color: $color-dark-gray;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  &__thumb:before {
+    width: 0;
+    height: 1px;
+  }
+
+  &__thumb:after {
+    height: 0;
+    width: 1px;
+  }
+
+  &__thumb figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1.5rem 2rem;
+  }
+
+  &__thumb-header {
+    margin: 0;
+    font-weight: normal;
+    opacity: 0;
+    font-size: .7em;
+    text-transform: uppercase;
+  }
+
+  &__thumb:hover img,
+  &__thumb.hover img {
+    zoom: 1;
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+  }
+
+  &__thumb:hover:before,
+  &__thumb.hover:before,
+  &__thumb:hover:after,
+  &__thumb.hover:after {
+    opacity: 1;
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+
+  &__thumb:hover:before,
+  &__thumb.hover:before {
+    width: 3rem;
+  }
+
+  &__thumb:hover:after,
+  &__thumb.hover:after {
+    height: 3rem;
+  }
+
+  &__thumb:hover &__thumb-header {
+    -webkit-transition-delay: 0.35s;
+    transition-delay: 0.35s;
+    opacity: 1;
+  }
+
+  &__thumb:hover &__description {
+    transition: opacity 1s;
+    opacity: 1;
+  }
+
+
 }

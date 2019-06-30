@@ -12,16 +12,15 @@ export class CertificateBlock extends Component {
   render() {
     return (
       <div className="certificates__block">
-        <div className="certificates__view">
+        <figure className="certificates__thumb" onClick={this.url}>
           <img
-            src={this.props.img} className="certificates__view-img"
+            src={this.props.img} className=""
             alt={this.props.title}/>
-          <div className="certificates__view-mask">
-            <h2 className="certificates__view-header">{this.props.title}</h2>
-            <p className="certificates__view-description">{this.props.description}</p>
-            <div onClick={this.url} className="certificates__view-link">{this.props.button}</div>
-          </div>
-        </div>
+          <figcaption>
+            <div className="certificates__description">{this.props.description}</div>
+            <div className="certificates__thumb-header">{this.props.title}</div>
+          </figcaption>
+        </figure>
       </div>
     );
   }

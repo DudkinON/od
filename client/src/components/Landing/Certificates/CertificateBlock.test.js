@@ -23,18 +23,13 @@ describe('CertificateBlock', () => {
   });
 
   it('should display passed title', function () {
-    expect(certificateBlock.find('.certificates__view-header').text())
+    expect(certificateBlock.find('.certificates__thumb-header').text())
       .toBe(props.title);
   });
 
   it('should display passed description', function () {
-    expect(certificateBlock.find('.certificates__view-description').text())
+    expect(certificateBlock.find('.certificates__description').text())
       .toBe(props.description)
-  });
-
-  it('should display button name', function () {
-    expect(certificateBlock.find('.certificates__view-link').text())
-      .toBe(props.button);
   });
 
   it('should display passed image', function () {
@@ -47,7 +42,7 @@ describe('CertificateBlock', () => {
   });
 
   it('should call url if user click the button', function () {
-    certificateBlock.find('.certificates__view-link').simulate('click');
+    certificateBlock.find('.certificates__thumb').simulate('click');
     expect(global.open).toHaveBeenCalled();
   });
 });
