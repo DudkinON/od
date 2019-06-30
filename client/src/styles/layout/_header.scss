@@ -110,9 +110,6 @@
 
     &_link {
       display: block;
-      &:hover{
-        //transform: scale(1.1);
-      }
     }
 
     &_logo {
@@ -147,10 +144,6 @@
       &_menu {
         display: none;
       }
-    }
-
-    &__nav_link {
-      //display: none;
     }
   }
 }
