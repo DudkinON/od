@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 export class ContactCard extends Component {
 
+
   open = () => {
 
     const {url, name} = this.props;

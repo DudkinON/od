@@ -15,7 +15,6 @@ describe('ContactCard', () => {
   };
   const contactCard = shallow(<ContactCard {...props}/>);
 
-
   it('should render properly', function () {
     expect(contactCard).toMatchSnapshot();
   });
