@@ -1,0 +1,11 @@
+.footer {
+  display: grid;
+  justify-items: center;
+  border-top: solid 1px $color-plastic;
+
+  &__content {
+    padding: 2rem;
+    display: block;
+    color: $color-plastic
+  }
+}

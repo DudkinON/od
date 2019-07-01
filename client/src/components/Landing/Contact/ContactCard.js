@@ -4,18 +4,25 @@ import React, {Component} from 'react';
 export class ContactCard extends Component {
 
 
+  open = () => {
+
+    const {url, name} = this.props;
+    const specs = 'width=800,height=600,menubar=on';
+    if (url.startsWith('mailto'))
+      window.location.assign(url);
+    else
+      window.open(url, name, specs, false);
+    return false;
+  };
+
   render() {
     return (
-      <div className="contact__card">
-        <div className="contact__icon-box">
-          
-        </div>
-        <div className="contact__card-backface">
-          <div className="contact__card-icon">
-            <span className="contact__card-icon--name">{this.props.title}</span>
-          </div>
-        </div>
-      </div>
+      <li className={this.props.className} onClick={this.open}>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             viewBox={this.props.view}>
+          <path d={this.props.icon} />
+        </svg>
+      </li>
     );
   }
 }

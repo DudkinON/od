@@ -1,0 +1,76 @@
+.contact {
+  display: grid;
+  justify-items: center;
+  padding: 15rem 0;
+
+
+  &__header {
+    padding-bottom: 8rem;
+
+    &--text {
+      font-size: 3em;
+      font-weight: 400;
+      color: $color-plastic;
+    }
+  }
+
+  &__wrapper {
+
+    & ul {
+      list-style: none;
+
+      & li {
+        width: 8rem;
+        height: 8rem;
+        line-height: 6rem;
+        margin: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50%;
+        border: .5rem solid $color-plastic;
+        float: left;
+        transition: all 0.5s ease;
+        color: $color-plastic;
+
+        & svg path {
+          fill: currentColor;
+        }
+      }
+    }
+
+    &--github:hover {
+      border: .5rem solid #000;
+      box-shadow: 0 0 1rem #000;
+      transition: all 0.5s ease;
+      color: #000;
+    }
+
+    &--linkedin:hover {
+      border: .5rem solid #0077B5;
+      box-shadow: 0 0 1rem #0077B5;
+      transition: all 0.5s ease;
+      color: #0077B5;
+    }
+
+    &--facebook:hover {
+      border: .5rem solid #3b5998;
+      box-shadow: 0 0 1rem #3b5998;
+      transition: all 0.5s ease;
+      color: #3b5998;
+    }
+
+    &--twitter:hover {
+      border: .5rem solid #00aced;
+      box-shadow: 0 0 1rem #00aced;
+      transition: all 0.5s ease;
+      color: #00aced;
+    }
+
+    &--email:hover {
+      border: .5rem solid $color-blue;
+      box-shadow: 0 0 1rem $color-blue;
+      transition: all 0.5s ease;
+      color: $color-blue;
+    }
+  }
+}
