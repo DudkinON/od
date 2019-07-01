@@ -76,6 +76,10 @@ const conf = {
         works: {
           header: 'Works',
           url: '/mock/works.json'
+        },
+        contact: {
+          header: 'Contact',
+          url: '/mock/contact.json'
         }
       }
     },

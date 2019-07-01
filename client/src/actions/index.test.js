@@ -72,5 +72,16 @@ describe('actions', () => {
 
     return check(done);
   });
+
+  it('should add contact data to the store', function (done) {
+    action = actions.getContact;
+    url = '/contact';
+
+    expectedActions = [{type: types.SET_CONTACT, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
 });
 

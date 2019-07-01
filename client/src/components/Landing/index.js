@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CenterBlock from './CenterBlock';
 import Skills from './Skills';
 import Certificates from './Certificates';
+import Works from './Works';
+import Contact from './Contact';
 
 
 export class Landing extends Component {
@@ -11,6 +13,8 @@ export class Landing extends Component {
         <CenterBlock />
         <Skills />
         <Certificates />
+        <Works />
+        <Contact />
       </div>
     );
   }
