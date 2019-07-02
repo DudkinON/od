@@ -25,7 +25,7 @@ export class Nav extends Component {
           <span className="header__nav_icon"/>
         </label>
         <Link to="/">
-          <img src="logo-small.svg" className="header__nav_logo" alt=""/>
+          <img src="/img/logo.svg" className="header__nav_logo" alt=""/>
         </Link>
         <ul className='header__nav_menu'>
           <li className="push"/>

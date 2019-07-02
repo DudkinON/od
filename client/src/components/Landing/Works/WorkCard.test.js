@@ -20,17 +20,6 @@ describe('WorkCard', () => {
     expect(workCard).toMatchSnapshot();
   });
 
-  it('should display the name of the work', function () {
-    expect(workCard.find('.works__name').text()).toBe(props.name);
-    expect(workCard.find('.works__card-content--name').html())
-      .toContain(props.name);
-  });
-
-  it('should display the description of the work', function () {
-    expect(workCard.find('.works__card-content--description').text())
-      .toBe(props.description)
-  });
-
   it('should render `a` with passed attributes', function () {
     expect(workCard.find('.works__card').props().to)
       .toBe(`${props.url}/${props.id}`)
