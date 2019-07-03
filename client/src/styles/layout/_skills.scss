@@ -19,8 +19,12 @@
     &--text {
       font-size: 3em;
       font-weight: 300;
-      color: $color-plastic-dark;
+      color: $color-dark-gray-1;
     }
+  }
+
+  &__active {
+    padding: 4rem 0;
   }
 
   &__body {
@@ -62,52 +66,55 @@
 
   &__category {
     text-align: center;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1.4em;
-    cursor: pointer;
-    padding: 4rem;
-    color: $color-plastic;
-    transition: transform ease-out .5s;
-    backface-visibility: hidden;
 
-    &::before {
-      transition: opacity ease-out .4s;
-      font-weight: 900;
-      content: '<';
-      padding-right: .5rem;
-      opacity: 0;
-    }
+    &_btn {
+      display: inline-block;
+      width: fit-content;
+      color: $color-dark-gray;
+      letter-spacing: 0;
+      font-weight: 300;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin: .5rem;
+      transition: all .5s ease-in-out;
 
-    &::after {
-      transition: opacity ease-out .4s;
-      font-weight: 900;
-      content: '/>';
-      padding-left: .5rem;
-      opacity: 0;
-    }
-    
-    &:hover {
-
-      transform: scale(1.1);
-      color: $color-plastic-dark;
-
-      &::before {
-        opacity: 1;
+      &:hover,
+      &:active {
+        letter-spacing: .5rem;
+        color: $color-plastic-dark;
       }
 
-      &::after {
-        opacity: 1;
+      &:after,
+      &:before {
+        backface-visibility: hidden;
+        border: 1px solid rgba($color-plastic-dark, 0);
+        bottom: 0;
+        content: " ";
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        transition: all .5s ease-in-out;
+        width: 0;
+      }
+
+      &:hover:after,
+      &:hover:before {
+        backface-visibility: hidden;
+        border-color: $color-plastic-dark;
+        transition: width .5s ease-in-out;
+        width: 100%;
+      }
+
+      &:hover:before {
+        bottom: auto;
+        top: 0;
+        width: 100%;
       }
     }
 
     @include mq(mobile-md) {
       font-weight: 400;
       font-size: .9em;
-    }
-
-    &-container {
-
     }
   }
 }
