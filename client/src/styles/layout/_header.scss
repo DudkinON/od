@@ -1,6 +1,26 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  z-index: 100;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  letter-spacing: normal;
 
   &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    z-index: 100;
+
 
     &_checkbox {
       display: none!important;
@@ -18,7 +38,7 @@
       &::after {
         width: 3rem;
         height: 2px;
-        background-color: $color-light-gray-2;
+        background-color: $color-dark-blue;
         display: inline-block;
       }
 
@@ -53,16 +73,6 @@
       display: none;
     }
 
-    &_top {
-      position: fixed;
-      top: 0;
-      z-index: 100;
-      width: 100%;
-      background: rgba(0,0,0,.3);
-      padding: 0;
-      margin: 0;
-    }
-
     &_menu {
       display: flex;
       margin-right: 0;
@@ -72,11 +82,11 @@
         padding: 1rem 0;
 
         & a {
-          color: #fff;
+          color: $color-nav-link;
           padding: 0 2rem;
           text-decoration: none;
           text-transform: uppercase;
-
+          z-index: 105;
           overflow: hidden;
           height: 1.5em;
 
@@ -111,31 +121,45 @@
     &_link {
       display: block;
     }
-
-    &_logo {
-      position: fixed;
-      top: .5rem;
-      left: 1rem;
-      color: #fff;
-      width: 3rem;
-      height: 3rem;
-      transform: scale(1);
-    }
-
-
   }
 
-  &__nav_checkbox:checked ~ &__nav_menu {
-    display: block;
-    padding-top: 3.5rem;
-    padding-bottom: 2rem;
+  &__logo-container {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
   }
 
-  &__nav_checkbox:checked {
-    display: block;
+  &__background {
+    background-color: rgba($color-light, 0.8);
+    -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    -webkit-transition-property: background-color, -webkit-backdrop-filter;
+    transition-property: background-color, backdrop-filter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
   }
+
+  &__content {
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 102;
+  }
+
+
 
   @include mq(mobile-md) {
+
+    &__nav_checkbox:checked ~ &__content > &__nav_menu {
+      display: block;
+      padding: 3rem 0;
+    }
 
     &__nav {
       &_button {
