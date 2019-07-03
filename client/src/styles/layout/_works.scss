@@ -60,7 +60,7 @@
     position: relative;
     border-radius: 4px;
 
-    @media only screen and (max-width: 48em) and (-moz-touch-enabled: 1), (pointer:coarse)  {
+    @media (-moz-touch-enabled: 1), (pointer:coarse)  {
       flex: none;
       display: block;
       margin: 4rem 2rem;
