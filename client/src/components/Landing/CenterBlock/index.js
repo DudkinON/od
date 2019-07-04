@@ -6,7 +6,7 @@ import TextBlock from './TextBlock';
 
 function mapStateToProps(state) {
   return {
-    particles: state.config.particles
+    particles: state.config.particles.landing
   };
 }
 
