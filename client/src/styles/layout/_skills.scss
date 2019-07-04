@@ -82,13 +82,13 @@
       &:hover,
       &:active {
         letter-spacing: .5rem;
-        color: $color-plastic-dark;
+        color: $color-nav-link;
       }
 
       &:after,
       &:before {
         backface-visibility: hidden;
-        border: 1px solid rgba($color-plastic-dark, 0);
+        border: 1px solid rgba($color-nav-link, 0);
         bottom: 0;
         content: " ";
         display: block;

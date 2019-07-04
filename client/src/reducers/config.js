@@ -1,26 +1,69 @@
 const conf = {
   particles: {
-    particles: {
-      number: {
-        value: 40,
-        density: {
+    about: {
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: false
+        },
+        move: {
           enable: true,
-          value_area: 800
+          speed: 6,
+          direction: "bottom",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
         }
       },
-      size: {
-        value: 3,
-        random: true
-      },
-      line_linked: {
-        distance: 200
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          }
+        }
       }
     },
-    interactivity: {
-      events: {
-        onhover: {
-          enable: true,
-          mode: "repulse"
+    landing: {
+      particles: {
+        number: {
+          value: 40,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          distance: 200
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          }
         }
       }
     }

@@ -92,7 +92,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -112,28 +112,28 @@
        style="stroke-width:0.26458332" /></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:69.55547333px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.73888659"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:69.55547333px;line-height:1.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;fill:#6d907b;fill-opacity:1;stroke:none;stroke-width:1.73888659;"
      x="-45.803082"
-     y="23.665487"
+     y="21.662674"
      id="text6399"
      transform="scale(0.93278588,1.0720574)"><tspan
        sodipodi:role="line"
        id="tspan6397"
        x="-45.803082"
-       y="23.665487"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#ffffff;fill-opacity:1;stroke-width:1.73888659">od</tspan></text>
+       y="21.662674"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#6d907b;fill-opacity:1;stroke-width:1.73888659;">od</tspan></text>
   <text
      transform="scale(0.93278588,1.0720574)"
      id="text6403"
-     y="20.935953"
+     y="21.357594"
      x="-79.114395"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:88.05776215px;line-height:2.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;fill:#40b4ff;fill-opacity:1;stroke:none;stroke-width:2.20144391"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:88.05776215px;line-height:2.25;font-family:monospace;-inkscape-font-specification:'monospace Bold';letter-spacing:0px;word-spacing:0px;fill:#6d907b;fill-opacity:1;stroke:none;stroke-width:2.20144391;"
      xml:space="preserve"><tspan
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1em;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#40b4ff;fill-opacity:1;stroke-width:2.20144391"
-       y="20.935953"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1em;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#6d907b;fill-opacity:1;stroke-width:2.20144391;"
+       y="21.357594"
        x="-79.114395"
        id="tspan6401"
        sodipodi:role="line">{<tspan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1em;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#000000;fill-opacity:1;stroke-width:2.20144391"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1em;font-family:monospace;-inkscape-font-specification:'monospace Bold';fill:#6d907b;fill-opacity:1;stroke-width:2.20144391;"
    id="tspan826"> </tspan>}</tspan></text>
 </svg>
