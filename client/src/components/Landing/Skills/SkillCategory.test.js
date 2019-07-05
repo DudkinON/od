@@ -7,10 +7,7 @@ describe('SKillCategory', () => {
 
   const props = {
     header: 'test header',
-    content: [
-      {name: 'skill name1'},
-      {name: 'skill name2'}
-    ]
+    content: [{id: "1"},{id: "2"}]
   };
 
   const skillsCategory = shallow(<SkillCategory {...props}/>);

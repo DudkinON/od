@@ -126,6 +126,10 @@ const conf = {
         }
       }
     },
+    about: {
+      header: "My statistics :-)",
+      url: "/mock/benefits.json"
+    },
     works: {
       url: '/works'
     }

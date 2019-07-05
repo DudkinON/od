@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Background from './Background';
+import Content from './Content';
+
 
 
 export class About extends Component {
@@ -9,11 +11,7 @@ export class About extends Component {
       <div className="about">
         <Background/>
         <section className="about__container">
-          <div className="about__content">
-            <div className="about__header">
-              <div className="about__header--text">Header</div>
-            </div>
-          </div>
+          <Content />
         </section>
       </div>
     );

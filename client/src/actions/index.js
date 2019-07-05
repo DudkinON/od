@@ -28,3 +28,10 @@ export const getContact = url => dispatch => {
       return dispatch({type: types.SET_CONTACT, payload: res.data});
   })
 };
+
+export const getBenefits = url => dispatch => {
+  return axios.get(url).then(res => {
+    if (res && res.data)
+      return dispatch({type: types.SET_BENEFITS, payload: res.data});
+  })
+};
