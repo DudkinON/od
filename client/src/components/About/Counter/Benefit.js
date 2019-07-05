@@ -37,7 +37,7 @@ export class Benefit extends Component {
   render() {
     return (
       <div className="about__benefit">
-        <div className="about__benefit-value">{this.state.value}</div>
+        <div className="about__benefit-value">{this.state.value}+</div>
         <div className="about__benefit-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox={this.props.view}>
             <path fill="currentColor" d={this.props.icon}/>
