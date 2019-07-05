@@ -3,6 +3,7 @@ import Background from './Background';
 import Content from './Content';
 
 
+
 export class About extends Component {
 
   render() {
