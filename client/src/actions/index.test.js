@@ -94,5 +94,16 @@ describe('actions', () => {
 
     return check(done);
   });
+
+  it('should add interest data to the store', function (done) {
+    action = actions.getInterest;
+    url = '/interest';
+
+    expectedActions = [{type: types.SET_INTEREST, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
 });
 

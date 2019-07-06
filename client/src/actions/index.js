@@ -35,3 +35,10 @@ export const getBenefits = url => dispatch => {
       return dispatch({type: types.SET_BENEFITS, payload: res.data});
   })
 };
+
+export const getInterest = url => dispatch => {
+  return axios.get(url).then(res => {
+    if (res && res.data)
+      return dispatch({type: types.SET_INTEREST, payload: res.data});
+  })
+};
