@@ -94,14 +94,6 @@ const conf = {
         {
           url: "/works",
           name: "works"
-        },
-        {
-          url: "/certificates",
-          name: "certificates"
-        },
-        {
-          url: "/contacts",
-          name: "contacts"
         }
       ]
     },
@@ -127,8 +119,14 @@ const conf = {
       }
     },
     about: {
-      header: "My statistics :-)",
-      url: "/mock/benefits.json"
+      header: "My statistics ",
+      url: "/mock/benefits.json",
+      parts: {
+        interest: {
+          header: "I'm interested in",
+          url: "/mock/interest.json"
+        }
+      }
     },
     works: {
       url: '/works'
