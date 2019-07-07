@@ -37,7 +37,7 @@ export class Progressbar extends Component {
               <svg xmlns="http://www.w3.org/2000/svg"
                    viewBox={this.props.view}
                    className="progressbar__icon">
-                <path d={this.props.img}/>
+                <path fill="currentColor" d={this.props.img}/>
               </svg>
             </div>
           </div>

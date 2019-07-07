@@ -28,4 +28,8 @@ describe('reducers', () => {
   it('should contain benefits reducer', function () {
     expect(list).toHaveProperty('benefits');
   });
+
+  it('should contain interest reducer', function () {
+    expect(list).toHaveProperty('interest');
+  });
 });

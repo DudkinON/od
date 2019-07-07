@@ -5,6 +5,7 @@ import certificates from './certificates';
 import works from './works';
 import contact from './contact';
 import benefits from './benefits';
+import interest from './interest';
 
 
 export default combineReducers({
@@ -13,5 +14,6 @@ export default combineReducers({
   certificates,
   works,
   contact,
-  benefits
+  benefits,
+  interest
 });

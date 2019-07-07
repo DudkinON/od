@@ -10,4 +10,8 @@ describe('Background', () => {
   it('should render properly', function () {
     expect(background).toMatchSnapshot();
   });
+
+  it('should contains Content component', function () {
+    expect(background.find('Connect(Content)').exists()).toBe(true);
+  });
 });
