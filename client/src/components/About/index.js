@@ -3,7 +3,6 @@ import Background from './Background';
 import Interest from './Interest';
 
 
-
 export class About extends Component {
 
   render() {
