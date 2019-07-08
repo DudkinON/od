@@ -16,7 +16,7 @@
   }
 
   &__header {
-
+    text-align: center;
     padding-bottom: 10rem;
 
     &--text {
@@ -29,6 +29,9 @@
 
   &__content {
     display: grid;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-pack: justify;
     justify-items: center;
     grid-gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -50,6 +53,8 @@
 
   &__block {
     min-width: 23rem;
+    -ms-flex: 0 1 auto;
+    padding: 1rem;
   }
 
   &__thumb {

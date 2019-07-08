@@ -31,11 +31,23 @@
   &__full-name {
     font-weight: 200;
     font-size: 4.5em;
+
+    @include mq(mobile-md) {
+      font-size: 4em;
+    }
+
+    @include mq(mobile-sm) {
+      font-size: 3em;
+    }
   }
 
   &__type-text {
     font-weight: 300;
     font-size: 1.8em;
+
+    @include mq(mobile-sm) {
+      font-size: 1.5em;
+    }
   }
 
 
