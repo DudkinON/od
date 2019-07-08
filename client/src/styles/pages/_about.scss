@@ -1,0 +1,188 @@
+.about {
+  position: relative;
+  
+  &__background {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(
+                    to right bottom,
+                    rgba($color-light, 0.9),
+                    rgba($color-dark-blue-2, 0.9)),
+    url(/img/about_bg.jpg);
+    background-size: cover;
+  }
+
+  &__particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    cursor: inherit;
+    z-index: 2;
+  }
+
+  &__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &__content {
+    @include centered;
+    color: $color-light-gray-2;
+    font-size: .8em;
+    position: relative;
+    text-align: center;
+    padding: 0 10%;
+
+    @include mq(mobile-sm) {
+      padding: 3rem 0;
+    }
+  }
+
+  &__header {
+    padding: 4rem 0;
+
+    @include mq(mobile-sm) {
+      padding: 3rem 0 1rem 0;
+    }
+
+    &-smile {
+      display: inline-block;
+      width: 1.9rem;
+    }
+
+    &--text {
+      font-size: 2.5em;
+      font-weight: 300;
+      display: -ms-flexbox;
+      -ms-flex-pack: center;
+      -ms-flex-align: center;
+
+      & span {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__paragraph {
+    padding: 1rem 0;
+  }
+
+  &__benefits {
+    display: grid;
+    display: -ms-flexbox;
+    -ms-flex-pack: justify;
+    justify-items: center;
+    -ms-flex-wrap: wrap;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    @include mq(desktop-sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include mq(mobile-md) {
+      grid-template-columns: 1fr;
+      -ms-flex-pack: center;
+    }
+  }
+
+  &__benefit {
+    text-align: center;
+    min-width: 20rem;
+    -ms-flex: 0 1 auto;
+
+    &-icon {
+      width: 6rem;
+      display: inline-block;
+    }
+
+    &-value {
+      font-size: 1.5em;
+    }
+
+    &-text {
+      font-size: 1em;
+    }
+  }
+
+  &__interest {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    &-container {
+      padding: 15rem 0;
+      color: $color-plastic;
+
+      @include mq(mobile-sm) {
+        padding: 10rem 0;
+      }
+    }
+    
+    &-header {
+      text-align: center;
+      font-size: 2.8em;
+      font-weight: 400;
+      padding: 10rem 0;
+
+      @include mq(mobile-sm) {
+        font-size: 2.2em;
+      }
+    }
+    &-block {
+      display: grid;
+      display: -ms-flexbox;
+      -ms-flex-pack: justify;
+      -ms-flex-wrap: wrap;
+      justify-items: center;
+      padding: 0 10%;
+      grid-gap: 10rem 2rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+
+      @include mq(desktop-md) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include mq(mobile-lg) {
+        grid-template-columns: 1fr;
+        -ms-flex-pack: center;
+      }
+    }
+
+    &-card {
+      cursor: pointer;
+      width: 18rem;
+      color: $color-plastic;
+      transition: all ease-out .3s;
+      padding: 1rem;
+
+      @include mq(mobile-sm) {
+        width: 16rem;
+      }
+
+      &:hover {
+        color: $color-plastic-dark;
+      }
+
+      &--inon {
+        width: 100%;
+      }
+
+      &--text {
+        text-align: center;
+        font-size: 1.1em;
+      }
+    }
+    
+  }
+}

@@ -4,9 +4,13 @@
   padding: 15rem 0;
 
 
+  @include mq(mobile-sm) {
+    padding: 5rem 0 15rem 0;
+  }
+
   &__header {
     padding-bottom: 8rem;
-
+    text-align: center;
     &--text {
       font-size: 3em;
       font-weight: 400;
@@ -15,6 +19,8 @@
   }
 
   &__wrapper {
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
 
     & ul {
       list-style: none;
@@ -31,6 +37,16 @@
         float: left;
         transition: all 0.5s ease;
         color: $color-plastic;
+
+        @include mq(mobile-md) {
+          width: 6rem;
+          height: 6rem;
+        }
+
+        @include mq(mobile-sm) {
+          width: 5rem;
+          height: 5rem;
+        }
 
         & svg path {
           fill: currentColor;
