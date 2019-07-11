@@ -101,7 +101,7 @@ const conf = {
       parts: {
         skills: {
           header: 'Skills',
-          url: '/mock/skills.json'
+          url: '/mock/categories.json'
         },
         certificates: {
           header: 'Certificates',
@@ -154,8 +154,13 @@ const conf = {
     },
     works: {
       url: '/works'
+    },
+    skills: {
+      header: 'Skills',
+      url: '/mock/skills.json'
     }
-  }
+  },
+  topSkills: ["10", "9", "11", "14", "13", "18"]
 };
 
 export default (state = conf) => state;
