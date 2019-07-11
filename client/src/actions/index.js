@@ -42,3 +42,14 @@ export const getInterest = url => dispatch => {
       return dispatch({type: types.SET_INTEREST, payload: res.data});
   })
 };
+
+export const getCategories = url => dispatch => {
+  return axios.get(url).then(res => {
+    if (res && res.data)
+      return dispatch({type: types.SET_CATEGORIES, payload: res.data});
+  })
+};
+
+export const setTopSkills = ids => dispatch => {
+  return dispatch({type: types.SET_TOP_SKILLS, payload: ids});
+};
