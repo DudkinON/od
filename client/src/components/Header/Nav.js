@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom';
 
 function mapStateToProps(state) {
   return {
-    links: state.config.modules.header.links
+    links: state.config.modules.header.links,
+    icon: state.config.modules.header.icon,
+    view: state.config.modules.header.view
   };
 }
 
@@ -14,7 +16,7 @@ export class Nav extends Component {
 
   render() {
 
-    const {links} = this.props;
+    const {links, icon, view} = this.props;
 
     return (
       <nav className="header__nav" >
@@ -27,7 +29,9 @@ export class Nav extends Component {
             <span className="header__nav_icon"/>
           </label>
           <Link to="/" className="header__logo-container">
-            <img src="/img/logo.svg" className="header__nav_logo" alt=""/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox={view} id="logo">
+              <path fill="currentColor" d={icon}/>
+            </svg>
           </Link>
           <ul className='header__nav_menu'>
             <li className="push"/>
