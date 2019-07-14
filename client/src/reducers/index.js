@@ -6,7 +6,6 @@ import works from './works';
 import contact from './contact';
 import benefits from './benefits';
 import interest from './interest';
-import topSkills from './topSkills';
 import categories from './categories';
 
 
@@ -18,6 +17,5 @@ export default combineReducers({
   contact,
   benefits,
   interest,
-  topSkills,
   categories
 });

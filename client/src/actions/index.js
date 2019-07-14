@@ -49,7 +49,3 @@ export const getCategories = url => dispatch => {
       return dispatch({type: types.SET_CATEGORIES, payload: res.data});
   })
 };
-
-export const setTopSkills = ids => dispatch => {
-  return dispatch({type: types.SET_TOP_SKILLS, payload: ids});
-};

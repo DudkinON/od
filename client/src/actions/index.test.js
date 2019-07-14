@@ -124,7 +124,7 @@ describe('actions', () => {
       return check(done);
     });
 
-    it('should add interest data to the store', function (done) {
+    it('should add categories data to the store', function (done) {
       action = actions.getCategories;
       url = '/categories';
 
