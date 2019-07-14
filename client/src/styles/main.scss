@@ -6,6 +6,8 @@
 @import "base/animations";
 @import "base/utilities";
 
+@import "components/bg-video";
+
 @import "layout/header";
 @import "layout/center-block";
 @import "layout/skills";
@@ -17,3 +19,4 @@
 @import "layout/contact";
 
 @import "pages/about";
+@import "pages/skills";

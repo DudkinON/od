@@ -7,16 +7,15 @@ export class Progressbar extends Component {
     percent: 0
   };
 
-
-  interval;
-
   componentDidMount() {
 
     this.interval = setInterval(() => {
 
       const {percent} = this.state;
-      if (percent === this.props.percent)
+      if (percent === this.props.percent) {
         clearInterval(this.interval);
+        delete this.interval;
+      }
       else
         this.setState({percent: percent + 1});
 
@@ -25,6 +24,7 @@ export class Progressbar extends Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
+    delete this.interval;
   }
 
   render() {
@@ -37,7 +37,7 @@ export class Progressbar extends Component {
               <svg xmlns="http://www.w3.org/2000/svg"
                    viewBox={this.props.view}
                    className="progressbar__icon">
-                <path fill="currentColor" d={this.props.img}/>
+                <path fill="currentColor" d={this.props.icon}/>
               </svg>
             </div>
           </div>

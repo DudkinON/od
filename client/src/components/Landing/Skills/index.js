@@ -1,27 +1,27 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import SkillCategory from './SkillCategory';
-import {getSkills} from '../../../actions';
+import {getCategories} from '../../../actions';
 
 
 function mapStateToProps(state) {
   return {
     header: state.config.modules.landing.parts.skills.header,
     url: state.config.modules.landing.parts.skills.url,
-    skills: state.skills
+    categories: state.categories
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onGetSkills: url => dispatch(getSkills(url))
+    onGetCategories: url => dispatch(getCategories(url))
   }
 }
 
 export class Skills extends Component {
 
   componentDidMount() {
-    this.props.onGetSkills(this.props.url);
+    this.props.onGetCategories(this.props.url);
   }
 
   render() {
@@ -31,7 +31,7 @@ export class Skills extends Component {
           <div className="skills__header">
             <h2 className="skills__header--text">{this.props.header}</h2>
           </div>
-          {this.props.skills && this.props.skills.map(props => (
+          {this.props.categories && this.props.categories.map(props => (
             <SkillCategory {...props} key={props.header} />
           ))}
         </div>

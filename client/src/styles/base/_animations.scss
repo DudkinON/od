@@ -56,6 +56,35 @@
   }
 }
 
+@keyframes appearAndZoom {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -400%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    background-position: -400;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
 @keyframes blink {
   from, to {
     color: transparent;
@@ -97,6 +126,6 @@
     color: transparent;
   }
   50% {
-    color: black;
+    color: $color-light;
   }
 }

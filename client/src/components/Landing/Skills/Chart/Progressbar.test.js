@@ -10,7 +10,7 @@ describe('Progressbar', () => {
 
   const props = {
     percent: 25,
-    img: 'test/link/img.jpg',
+    icon: 'test icon',
     name: 'test name',
     url: "/test",
     view: "0 0 100 100"
@@ -26,7 +26,7 @@ describe('Progressbar', () => {
   });
 
   it('should contains passed img path', function () {
-    expect(memoryRouter.html()).toContain(props.img);
+    expect(memoryRouter.html()).toContain(props.icon);
   });
 
   it('should contains passed url', function () {
@@ -41,6 +41,7 @@ describe('Progressbar', () => {
   it('should initialize value percent in the state', function () {
     expect(memoryRouter.find(Progressbar).dive().instance().state.percent).toBe(0);
   });
+
   it('should call setInterval', function () {
     expect(setInterval).toHaveBeenCalledWith(expect.any(Function), 25);
   });

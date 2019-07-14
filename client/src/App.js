@@ -4,6 +4,7 @@ import Header from './components/Header/index';
 import Landing from './components/Landing/index';
 import Footer from './components/Footer/index';
 import About from './components/About';
+import Skills from './components/Skills';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing}/>
         <Route path="/about" component={About}/>
+        <Route path="/skills" component={Skills}/>
       </Switch>
       <Footer/>
     </BrowserRouter>

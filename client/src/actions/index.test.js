@@ -6,11 +6,9 @@ import moxios from 'moxios';
 
 
 describe('actions', () => {
+  let url, action, expectedActions, data;
   const createMockStore = configureMockStore([thunk]);
   const mockStore = createMockStore({skills: []});
-  let data = [1, 2, 3];
-  let url, action, expectedActions;
-
   const setMock = () => {
     moxios.stubRequest(url, {
       status: 200,
@@ -23,6 +21,12 @@ describe('actions', () => {
     expect(mockStore.getActions()).toMatchObject(expectedActions);
     done();
   });
+
+  afterEach(() => {
+    mockStore.clearActions();
+  });
+
+  data = [1, 2, 3];
 
   beforeEach(function () {
     // import and pass your custom axios instance to this method
@@ -105,5 +109,41 @@ describe('actions', () => {
 
     return check(done);
   });
+
+  it('should add categories data to the store', function (done) {
+    action = actions.getCategories;
+    url = '/categories';
+
+    expectedActions = [{type: types.SET_CATEGORIES, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
+
+
+it('should add benefits data to the store', function (done) {
+  action = actions.getBenefits;
+  url = '/benefits';
+
+  expectedActions = [{type: types.SET_BENEFITS, payload: data}];
+
+  setMock();
+
+  return check(done);
+});
+
+it('should add interest data to the store', function (done) {
+  action = actions.getInterest;
+  url = '/interest';
+
+  expectedActions = [{type: types.SET_INTEREST, payload: data}];
+
+  setMock();
+
+  return check(done);
+});
+
+
 });
 

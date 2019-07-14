@@ -4,8 +4,8 @@ import {Skills} from './index';
 
 describe('Skills', () => {
   const props = {
-    onGetSkills: jest.fn(),
-    skills: [],
+    onGetCategories: jest.fn(),
+    categories: [],
     header: "skills",
     url: "/uri/to/skills"
   };
@@ -16,7 +16,7 @@ describe('Skills', () => {
   });
 
   it('should call onGetSkills method', function () {
-    expect(props.onGetSkills).toHaveBeenCalledWith(props.url);
+    expect(props.onGetCategories).toHaveBeenCalledWith(props.url);
   });
 
   it('should display header', function () {
