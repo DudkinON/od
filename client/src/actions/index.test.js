@@ -9,120 +9,83 @@ describe('actions', () => {
   let url, action, expectedActions, data;
   const createMockStore = configureMockStore([thunk]);
   const mockStore = createMockStore({skills: []});
+  const setMock = () => {
+    moxios.stubRequest(url, {
+      status: 200,
+      response: data
+    });
+    mockStore.dispatch(action(url));
+  };
+
+  const check = done => moxios.wait(() => {
+    expect(mockStore.getActions()).toMatchObject(expectedActions);
+    done();
+  });
 
   afterEach(() => {
     mockStore.clearActions();
   });
 
-  describe('request actions', () => {
+  data = [1, 2, 3];
 
-    data = [1, 2, 3];
+  beforeEach(function () {
+    // import and pass your custom axios instance to this method
+    moxios.install()
+  });
 
-    const setMock = () => {
-      moxios.stubRequest(url, {
-        status: 200,
-        response: data
-      });
-      mockStore.dispatch(action(url));
-    };
+  afterEach(function () {
 
-    const check = done => moxios.wait(() => {
-      expect(mockStore.getActions()).toMatchObject(expectedActions);
-      done();
-    });
+    // import and pass your custom axios instance to this method
+    moxios.uninstall();
+    mockStore.clearActions();
 
-    beforeEach(function () {
-      // import and pass your custom axios instance to this method
-      moxios.install()
-    });
+    url = '';
+    action = null;
+    expectedActions = null;
+  });
 
-    afterEach(function () {
+  it('should add skills to the store', function (done) {
 
-      // import and pass your custom axios instance to this method
-      moxios.uninstall();
-      mockStore.clearActions();
+    action = actions.getSkills;
+    url = '/skills';
+    expectedActions = [{type: types.SET_SKILLS, payload: data}];
 
-      url = '';
-      action = null;
-      expectedActions = null;
-    });
+    setMock();
 
-    it('should add skills to the store', function (done) {
+    return check(done);
+  });
 
-      action = actions.getSkills;
-      url = '/skills';
-      expectedActions = [{type: types.SET_SKILLS, payload: data}];
+  it('should add certificates to the store', function (done) {
 
-      setMock();
+    action = actions.getCertificates;
+    url = '/certificates';
+    expectedActions = [{type: types.SET_CERTIFICATES, payload: data}];
 
-      return check(done);
-    });
+    setMock();
 
-    it('should add certificates to the store', function (done) {
+    return check(done);
+  });
 
-      action = actions.getCertificates;
-      url = '/certificates';
-      expectedActions = [{type: types.SET_CERTIFICATES, payload: data}];
+  it('should add works to the store', function (done) {
 
-      setMock();
+    action = actions.getWorks;
+    url = '/works';
+    expectedActions = [{type: types.SET_WORKS, payload: data}];
 
-      return check(done);
-    });
+    setMock();
 
-    it('should add works to the store', function (done) {
+    return check(done);
+  });
 
-      action = actions.getWorks;
-      url = '/works';
-      expectedActions = [{type: types.SET_WORKS, payload: data}];
+  it('should add contact data to the store', function (done) {
+    action = actions.getContact;
+    url = '/contact';
 
-      setMock();
+    expectedActions = [{type: types.SET_CONTACT, payload: data}];
 
-      return check(done);
-    });
+    setMock();
 
-    it('should add contact data to the store', function (done) {
-      action = actions.getContact;
-      url = '/contact';
-
-      expectedActions = [{type: types.SET_CONTACT, payload: data}];
-
-      setMock();
-
-      return check(done);
-    });
-
-    it('should add benefits data to the store', function (done) {
-      action = actions.getBenefits;
-      url = '/benefits';
-
-      expectedActions = [{type: types.SET_BENEFITS, payload: data}];
-
-      setMock();
-
-      return check(done);
-    });
-
-    it('should add interest data to the store', function (done) {
-      action = actions.getInterest;
-      url = '/interest';
-
-      expectedActions = [{type: types.SET_INTEREST, payload: data}];
-
-      setMock();
-
-      return check(done);
-    });
-
-    it('should add categories data to the store', function (done) {
-      action = actions.getCategories;
-      url = '/categories';
-
-      expectedActions = [{type: types.SET_CATEGORIES, payload: data}];
-
-      setMock();
-
-      return check(done);
-    });
+    return check(done);
   });
 
   it('should add benefits data to the store', function (done) {
@@ -146,5 +109,41 @@ describe('actions', () => {
 
     return check(done);
   });
+
+  it('should add categories data to the store', function (done) {
+    action = actions.getCategories;
+    url = '/categories';
+
+    expectedActions = [{type: types.SET_CATEGORIES, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
+
+
+it('should add benefits data to the store', function (done) {
+  action = actions.getBenefits;
+  url = '/benefits';
+
+  expectedActions = [{type: types.SET_BENEFITS, payload: data}];
+
+  setMock();
+
+  return check(done);
+});
+
+it('should add interest data to the store', function (done) {
+  action = actions.getInterest;
+  url = '/interest';
+
+  expectedActions = [{type: types.SET_INTEREST, payload: data}];
+
+  setMock();
+
+  return check(done);
+});
+
+
 });
 
