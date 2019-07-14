@@ -10,8 +10,6 @@ export class Benefit extends Component {
     }
   }
 
-  interval;
-
   componentDidMount() {
 
     this.interval = setInterval(() => {
@@ -24,6 +22,7 @@ export class Benefit extends Component {
       if (value >= val) {
         value = val;
         clearInterval(this.interval);
+        delete this.interval;
       }
 
       this.setState({value});
@@ -32,6 +31,7 @@ export class Benefit extends Component {
 
   componentWillUnmount() {
     clearInterval(this.interval);
+    delete this.interval;
   }
 
   render() {
