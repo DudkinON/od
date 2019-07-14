@@ -14,17 +14,6 @@ describe('actions', () => {
     mockStore.clearActions();
   });
 
-  describe('processing actions', () => {
-    data = [{id: '2'}, {id: '5'}, {id: '8'}];
-
-    it('should add topSkills to the store', function () {
-      expectedActions = [{type: types.SET_TOP_SKILLS, payload: data}];
-      mockStore.dispatch(actions.setTopSkills(data));
-      expect(mockStore.getActions()).toMatchObject(expectedActions);
-    });
-
-  });
-
   describe('request actions', () => {
 
     data = [1, 2, 3];
