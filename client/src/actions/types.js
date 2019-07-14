@@ -5,5 +5,3 @@ export const SET_CONTACT = 'SET_CONTACT';
 export const SET_BENEFITS = 'SET_BENEFITS';
 export const SET_INTEREST = 'SET_INTEREST';
 export const SET_CATEGORIES = 'SET_CATEGORIES';
-
-

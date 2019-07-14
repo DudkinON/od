@@ -124,5 +124,27 @@ describe('actions', () => {
       return check(done);
     });
   });
+
+  it('should add benefits data to the store', function (done) {
+    action = actions.getBenefits;
+    url = '/benefits';
+
+    expectedActions = [{type: types.SET_BENEFITS, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
+
+  it('should add interest data to the store', function (done) {
+    action = actions.getInterest;
+    url = '/interest';
+
+    expectedActions = [{type: types.SET_INTEREST, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
 });
 
