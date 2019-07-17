@@ -1,26 +1,17 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import SkillCard from './SkillCard';
 
+const Content = () => {
+  const {skills} = useSelector(state => state);
 
-function mapStateToProps(state) {
-  return {
-    skills: state.skills
-  };
+  return (
+    <div className="skills__content">
+      {skills.map(skill => (
+        <SkillCard key={skill.id} {...skill} />
+      ))}
+    </div>
+  );
 }
 
-export class Content extends Component {
-  render() {
-    return (
-      <div className="skills__content">
-        {this.props.skills.map(skill => (
-          <SkillCard key={skill.id} {...skill} />
-        ))}
-      </div>
-    );
-  }
-}
-
-export default connect(
-  mapStateToProps,
-)(Content);
+export default Content;

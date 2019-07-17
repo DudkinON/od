@@ -7,12 +7,12 @@
                   to right bottom,
                   rgba($color-blue, 0.8),
                   rgba($color-green, 0.8)),
-  url(/img/certificates_bg.jpg);
+                  url(../../../public/img/certificates_bg.jpg);
   background-size: cover;
 
   &__container {
     padding: 0 2rem;
-    block-size: border-box;
+    box-sizing: border-box;
   }
 
   &__header {

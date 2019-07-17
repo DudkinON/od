@@ -1,39 +1,23 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Content from './Content';
-import {getSkills} from '../../../actions';
+import { getSkills } from '../../../actions';
 
+const SkillsPage = () => {
+  const dispatch = useDispatch();
 
-function mapStateToProps(state) {
-  return {
-    skills: state.skills,
-    header: state.config.modules.skills.header,
-    url: state.config.modules.skills.url
-  };
-}
+  const skills = useSelector(state => state.skills);
+  const {url} = useSelector(state => state.config.modules.skills);
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onGetSkills: url => dispatch(getSkills(url))
-  };
-}
+  useEffect(() => {
+    if (skills.length === 0) dispatch(getSkills(url));
+  }, [dispatch, skills, url]);
 
-export class SkillsPage extends Component {
+  return (
+    <div className="skills-page">
+      <Content />
+    </div>
+  );
+};
 
-  componentDidMount() {
-    if (this.props.skills.length === 0)
-      this.props.onGetSkills(this.props.url);
-  }
-
-  render() {
-    return (
-      <div className="skills-page">
-        <Content />
-      </div>
-    );
-  }
-}
-
-export default connect(
-  mapStateToProps, mapDispatchToProps
-)(SkillsPage);
+export default SkillsPage;

@@ -1,16 +1,12 @@
-import React, {Component} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
 import SkillsPage from './SkillsPage';
 
 
-export class Skills extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route exaxt to="/" component={SkillsPage}/>
-      </Switch>
-    );
-  }
-}
+export const Skills = () => (
+  <Routes>
+    <Route exaxt to="/" element={SkillsPage}/>
+  </Routes>
+);
 
 export default Skills;

@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import {combineReducers} from "redux";
 import config from './config';
 import skills from './skills';
 import certificates from './certificates';

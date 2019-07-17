@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import CenterBlock from './CenterBlock';
 import Skills from './Skills';
 import Certificates from './Certificates';
@@ -6,8 +6,7 @@ import Works from './Works';
 import Contact from './Contact';
 
 
-export class Landing extends Component {
-  render() {
+export const Landing = () => {
     return (
       <div className="landing">
         <CenterBlock />
@@ -17,7 +16,6 @@ export class Landing extends Component {
         <Contact />
       </div>
     );
-  }
 }
 
 export default Landing;
