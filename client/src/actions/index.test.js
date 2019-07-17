@@ -144,6 +144,17 @@ it('should add interest data to the store', function (done) {
   return check(done);
 });
 
+  it('should add work details to the store', function (done) {
+    action = actions.getWork;
+    url = '/works/1';
+    data = {id: "1"};
+
+    expectedActions = [{type: types.SET_WORK, payload: data}];
+
+    setMock();
+
+    return check(done)
+  });
 
 });
 
