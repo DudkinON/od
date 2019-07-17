@@ -214,7 +214,9 @@ const conf = {
       }
     },
     works: {
-      url: '/works'
+      path: '/works',
+      workUrl: '/mock/works',
+      url: '/mock/works.json'
     },
     skills: {
       header: 'Skills',

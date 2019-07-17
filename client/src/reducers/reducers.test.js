@@ -36,4 +36,8 @@ describe('reducers', () => {
   it('should contain categories reducer', function () {
     expect(list).toHaveProperty('categories');
   });
+
+  it('should contain work reducer', function () {
+    expect(list).toHaveProperty('work');
+  });
 });
