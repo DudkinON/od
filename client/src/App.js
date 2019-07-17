@@ -5,6 +5,7 @@ import Landing from './components/Landing/index';
 import Footer from './components/Footer/index';
 import About from './components/About';
 import Skills from './components/Skills';
+import Works from './components/Works';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Landing}/>
         <Route path="/about" component={About}/>
         <Route path="/skills" component={Skills}/>
+        <Route path="/works" component={Works}/>
       </Switch>
       <Footer/>
     </BrowserRouter>
