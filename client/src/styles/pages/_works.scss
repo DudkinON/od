@@ -1,0 +1,208 @@
+.works-page {
+  background-image: linear-gradient(
+                  to right,
+                  rgba(#3dc7ff, 0.9),
+                  rgba(#30ff89, 0.9),
+                  rgba(#3dc7ff, 0.9));
+  background-size: 80%;
+  animation: animate2 4s linear infinite;
+}
+
+.work-details {
+
+
+  &__header {
+    padding: 3rem 0;
+  }
+
+  &__error {
+    padding: 15rem 0;
+    text-align: center;
+    height: 90vh;
+    animation: appear 2s;
+  }
+
+  &__content {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 15rem 0;
+    text-align: center;
+    color: $color-dark-gray;
+  }
+
+  &__img {
+    padding: 5rem;
+    text-align: center;
+
+    & img {
+      max-width: 35rem;
+    }
+  }
+
+  &__wrapper {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+
+    @include mq(mobile-lg) {
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__block {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 98rem;
+
+    @include mq(desktop-sm) {
+      width: auto;
+    }
+  }
+
+  &__tech {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+
+    &--header {
+      padding: 0 2rem 2rem;
+    }
+  }
+
+  &__icon-card {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 1rem;
+
+    &--icon {
+      width: 5rem;
+    }
+
+    &--name {
+      display: inline-block;
+      padding: .7rem 1rem 1.5rem;
+    }
+  }
+
+  &__description {
+    padding: 1rem;
+    text-align: justify;
+    font-size: .8em;
+    color: $color-plastic-dark;
+
+    @include mq(mobile-lg) {
+      padding: 3rem;
+    }
+  }
+
+  &__links {
+
+    &-wrapper {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    &-header {
+      padding: 3rem 0 1rem;
+    }
+  }
+
+  &__link-card {
+    cursor: pointer;
+
+    &--icon {
+      padding: 1rem;
+      width: 6rem;
+      transition: color ease-out .5s;
+      color: $color-light-blue;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+}
