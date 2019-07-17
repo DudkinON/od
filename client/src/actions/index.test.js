@@ -121,29 +121,37 @@ describe('actions', () => {
     return check(done);
   });
 
+  it('should add benefits data to the store', function (done) {
+    action = actions.getBenefits;
+    url = '/benefits';
 
-it('should add benefits data to the store', function (done) {
-  action = actions.getBenefits;
-  url = '/benefits';
+    expectedActions = [{type: types.SET_BENEFITS, payload: data}];
 
-  expectedActions = [{type: types.SET_BENEFITS, payload: data}];
+    setMock();
 
-  setMock();
+    return check(done);
+  });
 
-  return check(done);
+  it('should add interest data to the store', function (done) {
+    action = actions.getInterest;
+    url = '/interest';
+
+    expectedActions = [{type: types.SET_INTEREST, payload: data}];
+
+    setMock();
+
+    return check(done);
+  });
+
+  it('should add work details to the store', function (done) {
+    action = actions.getWork;
+    url = '/works/1';
+    data = {id: "1"};
+
+    expectedActions = [{type: types.SET_WORK, payload: data}];
+
+    setMock();
+
+    return check(done)
+  });
 });
-
-it('should add interest data to the store', function (done) {
-  action = actions.getInterest;
-  url = '/interest';
-
-  expectedActions = [{type: types.SET_INTEREST, payload: data}];
-
-  setMock();
-
-  return check(done);
-});
-
-
-});
-

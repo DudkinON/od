@@ -7,6 +7,7 @@ import contact from './contact';
 import benefits from './benefits';
 import interest from './interest';
 import categories from './categories';
+import work from './work';
 
 
 export default combineReducers({
@@ -17,5 +18,6 @@ export default combineReducers({
   contact,
   benefits,
   interest,
-  categories
+  categories,
+  work
 });
