@@ -1,48 +1,28 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {getWorks} from '../../../actions';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getWorks } from '../../../actions';
 import WorksList from './WorksList';
 
+const Works = () => {
+  const dispatch = useDispatch();
 
-function mapStateToProps(state) {
-  return {
-    header: state.config.modules.landing.parts.works.header,
-    url: state.config.modules.landing.parts.works.url,
-    works: state.works
-  };
-}
+  // Accessing the state using the useSelector hook
+  const {url, header} = useSelector(state => state.config.modules.landing.parts.works);
 
-function mapDispatchToProps(dispatch) {
-  return {
-    onGetWorks: url => dispatch(getWorks(url))
-  }
-}
+  useEffect(() => {
+    dispatch(getWorks(url));
+  }, [dispatch, url]);
 
-export class Works extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidMount() {
-    this.props.onGetWorks(this.props.url);
-  };
-
-  render() {
-    return (
-      <section className="works">
-        <div className="works__container">
-          <div className="works__header">
-            <h3 className="works__header--text">{this.props.header}</h3>
-          </div>
-          <WorksList/>
+  return (
+    <section className="works">
+      <div className="works__container">
+        <div className="works__header">
+          <h3 className="works__header--text">{header}</h3>
         </div>
-      </section>
-    );
-  }
+        <WorksList/>
+      </div>
+    </section>
+  );
 }
 
-export default connect(
-  mapStateToProps, mapDispatchToProps
-)(Works);
+export default Works;

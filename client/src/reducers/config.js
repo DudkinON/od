@@ -1,4 +1,11 @@
 const conf = {
+  routes: {
+    home: "/",
+    about: "/about",
+    projects: "/projects",
+    contact: "/contact",
+    works: "/works",
+  },
   particles: {
     about: {
       particles: {

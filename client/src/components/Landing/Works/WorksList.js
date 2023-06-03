@@ -1,26 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import WorkCard from './WorkCard';
 
-
-function mapStateToProps(state) {
-  return {
-    works: state.works
-  };
+const WorksList = () => {
+  // Accessing the state using the useSelector hook
+  const {works, config} = useSelector(state => state);
+  console.log(works, config);
+  return (
+    <div className="works__content">
+      {works.map(work => (
+        <WorkCard key={work.id} url={config.routes.works} {...work}/>
+      ))}
+    </div>
+  );
 }
 
-export class WorksList extends Component {
-  render() {
-    return (
-      <div className="works__content">
-        {this.props.works.map(work => (
-          <WorkCard key={work.id} {...work}/>
-        ))}
-      </div>
-    );
-  }
-}
-
-export default connect(
-  mapStateToProps,
-)(WorksList);
+export default WorksList;

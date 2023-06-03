@@ -36,5 +36,3 @@ volumes:
 networks:
   nginx_network:
     driver: bridge
-  mysql_net:
-    driver: bridge
