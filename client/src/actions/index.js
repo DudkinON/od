@@ -51,10 +51,11 @@ export const getCategories = url => dispatch => {
 };
 
 export const getWork = url => dispatch => {
-  return axios.get(url)
-    .then(res => {
-      if (res && res.data)
-        return dispatch({type: types.SET_WORK, payload: res.data});
-    })
-    .catch(() => dispatch({type: types.SET_WORK, payload: {}}));
+    console.log(url);
+    axios.get(url).then(res => {
+        if (res && res.data)
+          dispatch({type: types.SET_WORK, payload: res.data});
+      })
+      .catch(() => dispatch({type: types.SET_WORK, payload: null}));
+
 };

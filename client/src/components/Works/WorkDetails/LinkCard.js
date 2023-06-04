@@ -1,26 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import IconCard from "./IconCard";
 
 
-export class LinkCard extends Component {
-
-  open = () => {
-    const {url} = this.props;
+export const LinkCard = ({icon, url}) => {
+  console.log(icon, url);
+  const open = () => {
     const specs = 'width=800,height=600';
-    window.open(url, "", specs, false)
+    window.open(url, "", specs)
   };
 
-  render() {
-    return (
-      <div className="work-details__link-card">
-        <div className="work-details__link-card--icon"
-             onClick={this.open}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox={this.props.icon.view}>
-            <path fill="currentColor" d={this.props.icon.icon}/>
-          </svg>
-        </div>
+  return (
+    <div className="work-details__link-card">
+      <div className="work-details__link-card--icon" onClick={open}>
+        <IconCard icon={icon.icon} view={icon.view}/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox={icon.view}>
+          <path fill="currentColor" d={icon.icon}/>
+        </svg>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default LinkCard;

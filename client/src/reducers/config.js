@@ -1,4 +1,14 @@
 const conf = {
+  urls: {
+    benefits: '/api/benefits.json',
+    categories: '/api/categories.json',
+    certificates: '/api/certificates.json',
+    contact: '/api/contact.json',
+    interest: '/api/interest.json',
+    skills: '/api/skills.json',
+    works: '/api/works.json',
+    work: '/api/work',
+  },
   routes: {
     home: "/",
     about: "/about",
@@ -222,26 +232,26 @@ const conf = {
       parts: {
         skills: {
           header: 'Skills',
-          url: '/mock/categories.json'
+          url: '/api/categories.json'
         },
         certificates: {
           header: 'Certificates',
-          url: '/mock/certificates.json',
+          url: '/api/certificates.json',
           button: 'Read more'
         },
         works: {
           header: 'Works',
-          url: '/mock/works.json'
+          url: '/api/works.json'
         },
         contact: {
           header: 'Contact',
-          url: '/mock/contact.json'
+          url: '/api/contact.json'
         }
       }
     },
     about: {
       header: "My statistics ",
-      url: "/mock/benefits.json",
+      url: "/api/benefits.json",
       icon: `M 125.33203 1.4394531 A 122.53849 122.53849 0 0 0 2.7929688 123.97852 A 122.53849 122.53849 0 0 0 125.33203
        246.51562 A 122.53849 122.53849 0 0 0 247.87109 123.97852 A 122.53849 122.53849 0 0 0 125.33203 1.4394531 z M 
        183.29102 68.091797 C 184.87917 68.077799 186.47384 68.180359 187.61133 68.404297 C 191.98039 69.264434 
@@ -269,18 +279,18 @@ const conf = {
       parts: {
         interest: {
           header: "I'm interested in",
-          url: "/mock/interest.json"
+          url: "/api/interest.json"
         }
       }
     },
     works: {
       path: '/works',
-      workUrl: '/mock/works',
-      url: '/mock/works.json'
+      workUrl: '/api/works',
+      url: '/api/works.json'
     },
     skills: {
       header: 'Skills',
-      url: '/mock/skills.json'
+      url: '/api/skills.json'
     }
   },
   icons: {

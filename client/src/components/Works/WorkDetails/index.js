@@ -1,31 +1,19 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import DisplayWork from './DisplayWork';
-import { getWork } from '../../../actions';
+import {getWorks} from '../../../actions';
 
 const WorkDetails = () => {
   const dispatch = useDispatch();
-  const { id } = useParams();
-  const url = useSelector(state => state.config.modules.works.workUrl);
-  const work = useSelector(state => state.work);
-  const links = useSelector(state => state.config.icons);
+  const {config, works} = useSelector(state => state);
 
   useEffect(() => {
-    dispatch(getWork(`${url}/${id}`));
-  }, [dispatch, url, id]);
-
-  const showWork = Object.keys(work).length > 0;
+    if(!works) dispatch(getWorks(config.urls.works));
+  }, [works, dispatch, config]);
 
   return (
     <div className="work-details">
-      {showWork && <DisplayWork {...work} links={links}/>}
-      {!showWork && (
-        <div className="work-details__error">
-          <h1>Cannot connect to the server</h1>
-          <p>Check your internet connection and try again</p>
-        </div>
-      )}
+      <DisplayWork/>
     </div>
   );
 };
